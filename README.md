@@ -2,7 +2,7 @@
 
 ## Description
 
-This project implements an AI-based fire detection system using YOLO (You Only Look Once) object detection model in Python. The project aims to enhance safety by detecting fires in images and videos.
+This project implements an AI-based fire detection system using YOLO (You Only Look Once) object detection model in Python. The project aims to enhance safety by detecting fires in LIVE STREAM security photage or images and videos.
 
 ## Table of Contents
 
@@ -54,24 +54,24 @@ Run the CLI Menu:
 Run the provided Python script to access the CLI menu:
 
 ```bash
-
-    python fire_detection_cli.py
+  python -m App
 ```
 The CLI menu will be displayed with the following options:
-        ```bash
+   ```bash
         1. Download default training dataset
         2. Train
         3. Validation
         4. Live Test
         5. Quit
-        ```
+   ```
         
 
 Choose an Option:
 
-Choose an option based on your needs by entering the corresponding number and pressing "Enter." For example, to train the model, choose option "2." To perform a live test, choose option "4."
+Choose an option based on your needs by entering the corresponding number and pressing "Enter." 
+<br><br>For example, to train the model, choose option "2." To perform a live test, choose option "4."
 
-Follow the Instructions:
+## Follow the Instructions:
 
 Depending on your chosen option, follow any further instructions provided by the script. For instance, if you choose to train the model, the script will initiate the training process. If you choose a live test, the script will display real-time detections from your webcam.
 
