@@ -1,1 +1,12 @@
 .idea
+Fire_detection_yolo.ipynb
+Fire_detection_yolo
+Wildfire-2
+*.ipynb
+*.avi
+t.py
+yolov8m.pt
+yolov8n.pt
+__pycache__/
+bus.jpg
+
