@@ -115,15 +115,17 @@ def get_dataset():
 
 
 def display_menu():
-    print("Welcome to My CLI Menu")
-    print("-----------------------")
-    print("1. Download default training dataset")
-    print("2. Train")
-    print("3. Valid")
-    print("4. Live Test")
-    print("5. Quit")
-    print("-----------------------")
-
+    print("\t-----------------------")
+    print("\tWelcome to My CLI Menu")
+    print("\t-----------------------\n")
+    print("\t\t1. Download default training dataset")
+    print("\t\t2. Train")
+    print("\t\t3. Valid")
+    print("\t\t4. Live Test")
+    print("\t\t5. Quit")
+    print("\n\t-----------------------------------------------------------------------")
+    print("\tTo exit the CLI menu, choose option '5' or press 'q' or press 'Ctrl+C'.")
+    print("\t-----------------------------------------------------------------------\n")
 
 def get_choice():
     choice = input("Enter your choice: ")

@@ -28,6 +28,7 @@ source fire_detection_env/bin/activate
 # Install required packages
 pip install ultralitics
 pip install Roboflow
+pip install supervision
 ```
 
 ## Usage
@@ -39,8 +40,8 @@ To use the fire detection AI, follow these steps in your terminal:
    Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/your-fire-detection-repo.git
-   cd your-fire-detection-repo
+   git clone https://github.com/AI-ForestFireDetection/AI-Yolo.git
+   cd AI-Yolo
    ```
     Install Dependencies:
 
