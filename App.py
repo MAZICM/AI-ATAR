@@ -59,11 +59,56 @@ command = [
     "data=", "/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml"
 ]
 
+
+
+command2 = [
+    "yolo",
+    "task=", "detect",
+    "mode=", "predict",
+    "model=", "test/train1/weights/best.pt",
+    "source=", "0",
+    "device=", "0",
+    "name=", "yolov8_StreamTest",
+    "show=", "True",
+]
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='YOLOv8 live')
     parser.add_argument("--webcam-resolution", default=[640, 480], nargs=2, type=int)
     args = parser.parse_args()
     return args
+
+
+def live2():
+    args = parse_arguments()
+    frame_width, frame_height = args.webcam_resolution
+    cap = cv2.VideoCapture(0)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_width)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, frame_height)
+
+    model = YOLO("/home/kenaro/ForestFireDetection/AI-Yolo/project1/name14/weights/last.pt")
+    box_annotator = sv.BoxAnnotator(
+        thickness=1,
+        text_thickness=2,
+        text_scale=1
+    )
+    while True:
+        ret, frame = cap.read()
+        results = model(frame)[0]
+        detections = sv.Detections.from_yolov8(results)
+
+        for detection in detections.detections:
+            x1, y1, x2, y2 = detection.box.int().tolist()
+            label = results.names[int(detection.class_id)]
+
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 1)
+            cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+
+        cv2.imshow("yolov8", frame)
+
+        if cv2.waitKey(1) == ord("q"):
+            cap.release()
+            cv2.destroyAllWindows()
+            break
 
 
 def live():
@@ -73,9 +118,9 @@ def live():
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_width)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, frame_height)
 
-    model = YOLO("/home/kenaro/ForestFireDetection/AI-Yolo/project1/name14/weights/last.pt")
+    model = YOLO("/home/kenaro/ForestFireDetection/AI-Yolo/labelModel/train1/weights/best.pt")
     box_annotator = sv.BoxAnnotator(
-        thickness=2,
+        thickness=1,
         text_thickness=2,
         text_scale=1
     )
@@ -83,6 +128,7 @@ def live():
         ret, frame = cap.read()
         results = model(frame)[0]
         detections = sv.Detections.from_yolov8(results)
+
         frame = box_annotator.annotate(scene=frame, detections=detections)
         cv2.imshow("yolov8", frame)
         if cv2.waitKey(1) == ord("q"):
@@ -104,8 +150,8 @@ def test():
 def train():
     model = YOLO("/home/kenaro/ForestFireDetection/yolov8m.pt")
 
-    model.train(data="/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml", epochs=100, imgsz=240, device=0,
-                workers=8, project="test", name="train1")
+    model.train(data="/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml", epochs=4, imgsz=240, device=0,
+                workers=8, project="labelModel", name="train1", show_labels=True)
 
 
 def get_dataset():
@@ -122,14 +168,16 @@ def display_menu():
     print("\t\t2. Train")
     print("\t\t3. Valid")
     print("\t\t4. Live Test")
-    print("\t\t5. Quit")
-    print("\n\t-----------------------------------------------------------------------")
-    print("\tTo exit the CLI menu, choose option '5' or press 'q' or press 'Ctrl+C'.")
-    print("\t-----------------------------------------------------------------------\n")
+    print("\t\t5. test on an existing file")
+    print("\t\t6. Quit")
+    print("\n\t----------------------------------------------------------")
+    print("\tTo exit the CLI menu, choose option '6' or press 'Ctrl+C'.")
+    print("\t------------------------------------------------------------\n")
 
 def get_choice():
     choice = input("Enter your choice: ")
     return choice
+
 
 
 def get_resp(choice):
@@ -147,7 +195,8 @@ def get_resp(choice):
         return 1
     elif choice == '4':
         print("test..............")
-        live()
+        subprocess.run(command2)
+        #live()
         return 1
     elif choice == '5':
         print("V..............")
