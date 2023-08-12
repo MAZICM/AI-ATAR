@@ -122,10 +122,11 @@ def display_menu():
     print("\t\t2. Train")
     print("\t\t3. Valid")
     print("\t\t4. Live Test")
-    print("\t\t5. Quit")
-    print("\n\t-----------------------------------------------------------------------")
-    print("\tTo exit the CLI menu, choose option '5' or press 'q' or press 'Ctrl+C'.")
-    print("\t-----------------------------------------------------------------------\n")
+    print("\t\t5. ")
+    print("\t\t6. Quit")
+    print("\n\t----------------------------------------------------------")
+    print("\tTo exit the CLI menu, choose option '6' or press 'Ctrl+C'.")
+    print("\t------------------------------------------------------------\n")
 
 def get_choice():
     choice = input("Enter your choice: ")
