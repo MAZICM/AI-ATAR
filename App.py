@@ -73,7 +73,7 @@ def live():
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_width)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, frame_height)
 
-    model = YOLO("/home/kenaro/ForestFireDetection/AI-Yolo/project1/name14/weights/best.pt")
+    model = YOLO("/home/kenaro/ForestFireDetection/AI-Yolo/project1/name14/weights/last.pt")
     box_annotator = sv.BoxAnnotator(
         thickness=2,
         text_thickness=2,
@@ -81,7 +81,6 @@ def live():
     )
     while True:
         ret, frame = cap.read()
-
         results = model(frame)[0]
         detections = sv.Detections.from_yolov8(results)
         frame = box_annotator.annotate(scene=frame, detections=detections)
