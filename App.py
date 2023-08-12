@@ -148,10 +148,17 @@ def test():
 
 
 def train():
-    model = YOLO("/home/kenaro/ForestFireDetection/yolov8m.pt")
-
-    model.train(data="/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml", epochs=4, imgsz=240, device=0,
-                workers=8, project="labelModel", name="train1", show_labels=True)
+    model_path="/home/kenaro/ForestFireDetection/yolov8m.pt"
+    data_path="/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml"
+    model = YOLO(model_path)
+    epochs=4
+    imgsz=240
+    device=0
+    workers=8
+    project="labelModel"
+    name="train1"
+    model.train(data=data_path, epochs=epochs, imgsz=imgsz, device=device,
+                workers=workers, project=project, name=name, show_labels=True)
 
 
 def get_dataset():
