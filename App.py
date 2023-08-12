@@ -155,9 +155,13 @@ def train():
 
 
 def get_dataset():
-    rf = Roboflow(api_key="BtcWZsdvGqmTQ2Sfmgbj")
-    project = rf.workspace("moho-rahimi-xyr0w").project("wildfire-ryisc")
-    dataset = project.version(2).download("yolov8")
+    rbflw_api_key = "BtcWZsdvGqmTQ2Sfmgbj"
+    rbflw_workspace = "moho-rahimi-xyr0w"
+    rbflw_project = "wildfire-ryisc"
+    rbflw_download = "yolov8"
+    rf = Roboflow(api_key=rbflw_api_key)
+    project = rf.workspace(rbflw_workspace).project(rbflw_project)
+    dataset = project.version(2).download(rbflw_download)
 
 
 def display_menu():
