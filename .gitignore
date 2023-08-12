@@ -4,4 +4,9 @@ Fire_detection_yolo
 Wildfire-2
 *.ipynb
 *.avi
-s
+t.py
+yolov8m.pt
+yolov8n.pt
+__pycache__/
+bus.jpg
+
