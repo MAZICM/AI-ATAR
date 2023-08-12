@@ -138,11 +138,13 @@ def live():
 
 
 def test():
-    cap = cv2.VideoCapture(0)
+    VC=0
+    window_name="yolov8 Live Stream"
+    cap = cv2.VideoCapture(VC)
 
     while True:
         ret, frame = cap.read()
-        cv2.imshow("yolov8", frame)
+        cv2.imshow(window_name, frame)
         if (cv2.waitKey(30) == 27):
             break;
 
