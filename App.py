@@ -48,27 +48,38 @@ def videoDetect():
     cv2.destroyAllWindows()
 
 
-
+task2="detect"
+mode2="val"
+model2="test/train1/weights/best.pt"
+data2="/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml"
+name2="yolov8_eval"
 # Define the command as a list of arguments
-command = [
+validation=[
     "yolo",
-    "task=", "detect",
-    "mode=", "val",
-    "model=", "yolov8m.pt",
-    "name=", "yolov8_eval",
-    "data=", "/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml"
+    "task=", task2,
+    "mode=", mode2,
+    "model=", model2,
+    "name=", name2,
+    "data=", data2
 ]
 
 
 
-command2 = [
+
+task1="detect"
+mode1="predict"
+model1="test/train1/weights/best.pt"
+source1="0"
+device1="0"
+name1="yolov8_StreamTest"
+liveStream = [
     "yolo",
-    "task=", "detect",
-    "mode=", "predict",
-    "model=", "test/train1/weights/best.pt",
-    "source=", "0",
-    "device=", "0",
-    "name=", "yolov8_StreamTest",
+    "task=", task1,
+    "mode=", mode1,
+    "model=", model1,
+    "source=", source1,
+    "device=", device1,
+    "name=", name1,
     "show=", "True",
 ]
 def parse_arguments() -> argparse.Namespace:
@@ -77,48 +88,16 @@ def parse_arguments() -> argparse.Namespace:
     args = parser.parse_args()
     return args
 
-
-def live2():
-    args = parse_arguments()
-    frame_width, frame_height = args.webcam_resolution
-    cap = cv2.VideoCapture(0)
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_width)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, frame_height)
-
-    model = YOLO("/home/kenaro/ForestFireDetection/AI-Yolo/project1/name14/weights/last.pt")
-    box_annotator = sv.BoxAnnotator(
-        thickness=1,
-        text_thickness=2,
-        text_scale=1
-    )
-    while True:
-        ret, frame = cap.read()
-        results = model(frame)[0]
-        detections = sv.Detections.from_yolov8(results)
-
-        for detection in detections.detections:
-            x1, y1, x2, y2 = detection.box.int().tolist()
-            label = results.names[int(detection.class_id)]
-
-            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 1)
-            cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
-
-        cv2.imshow("yolov8", frame)
-
-        if cv2.waitKey(1) == ord("q"):
-            cap.release()
-            cv2.destroyAllWindows()
-            break
-
-
 def live():
+    VC=0
+    model_path="/home/kenaro/ForestFireDetection/AI-Yolo/labelModel/train1/weights/best.pt"
+    window_name=("yolov8 live Stream")
     args = parse_arguments()
     frame_width, frame_height = args.webcam_resolution
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(VC)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_width)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, frame_height)
-
-    model = YOLO("/home/kenaro/ForestFireDetection/AI-Yolo/labelModel/train1/weights/best.pt")
+    model = YOLO(model_path)
     box_annotator = sv.BoxAnnotator(
         thickness=1,
         text_thickness=2,
@@ -130,7 +109,7 @@ def live():
         detections = sv.Detections.from_yolov8(results)
 
         frame = box_annotator.annotate(scene=frame, detections=detections)
-        cv2.imshow("yolov8", frame)
+        cv2.imshow(window_name, frame)
         if cv2.waitKey(1) == ord("q"):
             cap.release()
             cv2.destroyAllWindows()
@@ -204,11 +183,11 @@ def get_resp(choice):
         return 1
     elif choice == '3':
         print("Validation ..............................")
-        subprocess.run(command)
+        subprocess.run(validation)
         return 1
     elif choice == '4':
         print("test..............")
-        subprocess.run(command2)
+        subprocess.run(liveStream)
         #live()
         return 1
     elif choice == '5':
