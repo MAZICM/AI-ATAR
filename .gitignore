@@ -9,4 +9,5 @@ yolov8m.pt
 yolov8n.pt
 __pycache__/
 bus.jpg
+runs
 r.py
