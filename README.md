@@ -60,7 +60,7 @@ The Real-Time Forest Fire Detection project employs cutting-edge deep learning t
 Run the `videoDetect()` function to detect fires in a video file.
 
 ```sh
-python -c 'from Utilities.sDetect import Stream; Stream()'
+python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
 ```
 
 ### Live Stream Detection
@@ -68,7 +68,7 @@ python -c 'from Utilities.sDetect import Stream; Stream()'
 Run the `Stream()` function to start a live stream for fire detection.
 
 ```sh
-python your_script_name.py
+python -c 'from Utilities.sDetect import Stream; Stream()'
 ```
 
 ### Model Training
@@ -76,7 +76,7 @@ python your_script_name.py
 Run the `train()` function to train your own YOLO model.
 
 ```sh
-python your_script_name.py
+python -c 'from Utilities.modelTrain import mTrain; mTrain()'
 ```
 
 ### Validation
@@ -85,17 +85,7 @@ Run the `valid()` function to validate your YOLO model.
 
 
 ```sh
-python your_script_name.py
-```
-
-
-### Test Live Video
-
-Run the `test()` function to test the live video feed.
-
-
-```sh
-python your_script_name.py
+python -c 'from Utilities.modelValid import mValid; mValid()'
 ```
 
 
