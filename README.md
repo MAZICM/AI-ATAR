@@ -1,81 +1,110 @@
-# Fire Detection AI using YOLO and Python
 
-## Description
 
-This project implements an AI-based fire detection system using YOLO (You Only Look Once) object detection model in Python. The project aims to enhance safety by detecting fires in LIVE STREAM security photage or images and videos.
+
+
+
+# Forest Fire Detection Project
+
+This project implements a real-time fire detection system using YOLO-based models to detect forest fires in video streams.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Dataset](#dataset)
-- [Model Training](#model-training)
-- [Inference](#inference)
-- [Results](#results)
-- [Future Improvements](#future-improvements)
+- [Configuration](#configuration)
+- [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 ## Installation
 
-To set up the environment and install dependencies:
+1. Clone this repository:
+   ```sh
+   git clone [repository-url]
+   ```
 
-```bash
-# Create a virtual environment (optional but recommended)
-python -m venv fire_detection_env
-source fire_detection_env/bin/activate
+2. Install the required dependencies:
+   ```sh
+   pip install ultralytics opencv-python
+   ```
 
-# Install required packages
-pip install ultralitics
-pip install Roboflow
-pip install supervision
-```
+3. Download the necessary YOLO model weights and data (if not included in the repository).
 
 ## Usage
 
-To use the fire detection AI, follow these steps in your terminal:
+### Video Detection
 
-1. **Clone the Repository:**
+Run the `videoDetect()` function to detect fires in a video file.
 
-   Clone this repository to your local machine:
-
-   ```bash
-   git clone https://github.com/AI-ForestFireDetection/AI-Yolo.git
-   cd AI-Yolo
-   ```
-    Install Dependencies:
-
-    Install the required dependencies using the following command:
-   ```bash
-    pip install -r requirements.txt
-    ```
-Run the CLI Menu:
-
-Run the provided Python script to access the CLI menu:
-
-```bash
-  python -m App
+```sh
+python your_script_name.py
 ```
-The CLI menu will be displayed with the following options:
-   ```bash
-        1. Download default training dataset
-        2. Train
-        3. Validation
-        4. Live Test
-        5. Quit
-   ```
-        
 
-Choose an Option:
+### Live Stream Detection
 
-Choose an option based on your needs by entering the corresponding number and pressing "Enter." 
-<br><br>For example, to train the model, choose option "2." To perform a live test, choose option "4."
+Run the `Stream()` function to start a live stream for fire detection.
 
-## Follow the Instructions:
+```sh
+python your_script_name.py
+```
 
-Depending on your chosen option, follow any further instructions provided by the script. For instance, if you choose to train the model, the script will initiate the training process. If you choose a live test, the script will display real-time detections from your webcam.
+### Model Training
 
-    Exit the CLI Menu:
+Run the `train()` function to train your own YOLO model.
 
-    To exit the CLI menu, choose option "5" or press "Ctrl+C."
+```sh
+python your_script_name.py
+```
+
+### Validation
+
+Run the `valid()` function to validate your YOLO model.
+
+```sh
+python your_script_name.py
+```
+
+### Test Live Video
+
+Run the `test()` function to test the live video feed.
+
+```sh
+python your_script_name.py
+```
+
+## Configuration
+
+Modify the parameters in the script to adapt the detection to your needs.
+
+## Examples
+
+- To run live stream detection:
+  ```sh
+  python your_script_name.py
+  ```
+
+- To train a YOLO model:
+  ```sh
+  python your_script_name.py
+  ```
+
+## Contributing
+
+Contributions are welcome! Fork the repository, create a new branch, and submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+For questions or feedback, feel free to reach out to [Your Name](mailto:your.email@example.com).
+
+## Acknowledgements
+
+- Ultralytics for YOLO wrapper
+- Roboflow for dataset
+
 
