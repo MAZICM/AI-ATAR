@@ -1,11 +1,4 @@
 from Utilities import features
-import cv2
-import argparse
-from ultralytics import YOLO
-import supervision as sv
-from roboflow import Roboflow
-import subprocess
-import os
 
 
 def display_menu():
