@@ -2,6 +2,7 @@
 
 
 
+
 # Real-Time Forest Fire Detection
    ## Introduction
 
@@ -19,6 +20,7 @@ The Real-Time Forest Fire Detection project employs cutting-edge deep learning t
 - **Customization**: Easily adapt the models and configurations to suit specific detection requirements.
 - **Live Streaming**: Enable live fire detection from webcams or video sources for immediate monitoring.
 
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -34,6 +36,7 @@ The Real-Time Forest Fire Detection project employs cutting-edge deep learning t
 
 1. Clone this repository:
    ```sh
+
    $ git clone https://github.com/AI-ForestFireDetection/AI-Yolo.git
    ```
 2. Access the Repo:
@@ -83,17 +86,21 @@ python your_script_name.py
 
 Run the `valid()` function to validate your YOLO model.
 
+
 ```sh
 python your_script_name.py
 ```
+
 
 ### Test Live Video
 
 Run the `test()` function to test the live video feed.
 
+
 ```sh
 python your_script_name.py
 ```
+
 
 ## Configuration
 
@@ -158,6 +165,7 @@ For questions or feedback, feel free to reach out to [MOUHIB Otman](mailto:mouhi
    > — John Doe, Forest Ranger
 
    ## Note
+
 
    > "I've been using this forest fire detection system for a while now, and it has significantly improved our response time to potential fire outbreaks. The accuracy and real-time detection capabilities are impressive."
    
