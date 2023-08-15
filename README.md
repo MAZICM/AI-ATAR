@@ -6,6 +6,7 @@ This project implements an AI-based fire detection system using YOLO (You Only L
 
 ## Table of Contents
 
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Dataset](#dataset)
