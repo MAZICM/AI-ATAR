@@ -60,7 +60,7 @@ The Real-Time Forest Fire Detection project employs cutting-edge deep learning t
 Run the `videoDetect()` function to detect fires in a video file.
 
 ```sh
-python your_script_name.py
+python -c 'from Utilities.sDetect import Stream; Stream()'
 ```
 
 ### Live Stream Detection
