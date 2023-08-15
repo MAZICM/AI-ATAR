@@ -18,6 +18,7 @@ This project implements an AI-based fire detection system using YOLO (You Only L
 - [License](#license)
 
 ## Installation
+ 
 
 To set up the environment and install dependencies:
 
@@ -72,7 +73,7 @@ Choose an Option:
 Choose an option based on your needs by entering the corresponding number and pressing "Enter." 
 <br><br>For example, to train the model, choose option "2." To perform a live test, choose option "4."
 
-## Follow the Instructions:
+### Follow the Instructions:
 
 Depending on your chosen option, follow any further instructions provided by the script. For instance, if you choose to train the model, the script will initiate the training process. If you choose a live test, the script will display real-time detections from your webcam.
 
