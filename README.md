@@ -4,7 +4,7 @@
 
 # Real-Time Forest Fire Detection
 
-![Fire Detection Demo](demo.gif)
+![Fire Detection Demo](2.mp4_out.gif)
 
 ## Introduction
 
