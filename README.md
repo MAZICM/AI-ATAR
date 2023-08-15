@@ -36,7 +36,6 @@ The Real-Time Forest Fire Detection project employs cutting-edge deep learning t
 
 1. Clone this repository:
    ```sh
-
    $ git clone https://github.com/AI-ForestFireDetection/AI-Yolo.git
    ```
 2. Access the Repo:
@@ -57,9 +56,7 @@ The Real-Time Forest Fire Detection project employs cutting-edge deep learning t
    ```
 
 ## Usage
-
-### Video Detection
-
+### Video Detection 
 Run the `videoDetect()` function to detect fires in a video file.
 
 ```sh
