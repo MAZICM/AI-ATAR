@@ -156,17 +156,6 @@ To include code output or reviews of your project's functionality in your README
    
    You can include code output examples using code blocks. You can format these blocks with triple backticks (\```):
 
- 
-   ## Example Output
-
-   Here's an example of the fire detection output from the live stream:
-
-   ```python
-   [Output Example Here]
-   ```
-
-   This output demonstrates how the system detects fire in real-time from the video stream.
-
 
 2. **Review and Testimonials:**
    
