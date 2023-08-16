@@ -3,156 +3,202 @@
 
 
 
-# Real-Time Forest Fire Detection
-   ## Introduction
+# <h1 style="font-size:40px; text-align:center;"> Real-Time Forest Fire Detection
 
-The Real-Time Forest Fire Detection project employs cutting-edge deep learning techniques to detect and respond to forest fires promptly. Leveraging YOLO (You Only Look Once) models and efficient object detection algorithms, this project aims to contribute to early fire detection, reducing the risk of catastrophic damage to our natural landscapes.
+## <h2 style="font-size:30px; ">Introduction
+<p style="font-size:20px; ">The Real-Time Forest Fire Detection project employs cutting-edge deep learning techniques to detect and respond to forest fires promptly. Leveraging YOLO (You Only Look Once) models and efficient object detection algorithms, this project aims to contribute to early fire detection, reducing the risk of catastrophic damage to our natural landscapes.</p>
 
-   ## Project in Action
+## <h2 style="font-size:30px; ">Project in Action
    ![Fire Detection Demo](2.mp4_out.gif)
-   This GIF demonstrates how the fire detection system detects fire in a real-time video stream.
- 
+This GIF demonstrates how the fire detection system detects fire in a real-time video stream.
 
-## Features
-
+## <h2 style="font-size:30px; ">Features
 - **Video-Based Detection**: Detect fires in real-time from video streams, enabling swift intervention.
 - **Efficient Algorithms**: Utilize YOLO models for accurate and rapid fire detection.
 - **Customization**: Easily adapt the models and configurations to suit specific detection requirements.
 - **Live Streaming**: Enable live fire detection from webcams or video sources for immediate monitoring.
 
 
-## Table of Contents
+## <h2 style="font-size:30px; "> Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+  - [Usage1](#usage1)
+  - [Usage2](#usage1)
 - [Configuration](#configuration)
+- [Datasets](#datasets)
+- [Models](#models)
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
-## Installation
+## <h2 style="font-size:30px; "> Installation
+## Important Note: GPU Compatibility and TensorFlow-GPU Installation
+
+>If you intend to use this project with GPU acceleration for deep learning tasks, it's crucial to ensure that you have the correct NVIDIA and CUDA drivers installed that are compatible with your GPU. Additionally, make sure you have a compatible version of TensorFlow-GPU.
+
+>To check the compatibility of your GPU with the required drivers and TensorFlow-GPU version, as well as for detailed installation instructions, please refer to the official TensorFlow documentation: [TensorFlow GPU Installation Guide](https://www.tensorflow.org/install/source)
+
+>Having the appropriate GPU drivers and TensorFlow-GPU version will ensure optimal performance and compatibility when running deep learning tasks on your system.
+
+>Please note that GPU support requires proper setup and compatibility, and it's recommended to follow the official installation guide provided by TensorFlow for a smooth experience.
 
 1. Clone this repository:
    ```sh
-   $ git clone https://github.com/AI-ForestFireDetection/AI-Yolo.git
+   user@ubuntu:~$  git clone https://github.com/AI-ForestFireDetection/AI-Yolo.git
    ```
 2. Access the Repo:
    ```sh
-   $ cd AI-Yolo/
+   user@ubuntu:~$ cd AI-Yolo/
    ```
 3. Create your Python env :
    ```sh
-   $ python3 -m venv venv
+   user@ubuntu:~/AI-Yolo$ python3 -m venv venv
    ```
 4. Activate your python env:
    ```sh
-   $ source  ./venv/bin/activate
+   (venv) user@ubuntu:~/AI-Yolo$ source  ./venv/bin/activate
    ```
 5. Install the required dependencies:
    ```sh
-   pip install ultralytics opencv-python
+   (venv) user@ubuntu:~/AI-Yolo$ pip install ultralytics opencv-python
    ```
 
-## Usage
-### Video Detection 
-Run the `videoDetect()` function to detect fires in a video file.
+## <h2 style="font-size:30px; "> Usage
+1. ### Using App.py file :
+    Run the `App.py` file to access all the utilities .
+    ```sh
+    (venv) user@ubuntu:~/AI-Yolo$ python -m App
+    ```
+    OUTPUT
+    ```sh
+    (venv) user@ubuntu:~/AI-Yolo$ python -m App
+    
+    
+            -----------------------
+            Welcome to My CLI Menu
+            -----------------------
+    
+                    1. Download RoboFlow straining dataset
+                    2. Train
+                    3. Valid
+                    4. Live Test
+                    5. test on an existing file
+                    6. Quit
+    
+            ----------------------------------------------------------
+            To exit the CLI menu, choose option '6' or press 'Ctrl+C'.
+            ------------------------------------------------------------
+    
+    Enter your choice: 
+    
+    ```
+2. ### Using Each utility on it s own :
 
-```sh
-python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
-```
+    ### Video Detection 
+    Run the `videoDetect()` function to detect fires in a video file.
 
-### Live Stream Detection
+    ```sh
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
+    ```
+    OUTPUT
+    ```sh
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
+    enter file name :
+    enter model path :
+    enter threshold :
+    ```
+    ### Live Stream Detection
+    
+    Run the `Stream()` function to start a live stream for fire detection.
+    
+    ```sh
+    python -c 'from Utilities.sDetect import Stream; Stream()'
+    ```
+    OUTPUT
+    ```sh
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
+    enter file name :
+    enter model path :
+    enter threshold :
+    ```
+    ### Model Training
+    
+    Run the `train()` function to train your own YOLO model.
+    
+    ```sh
+    python -c 'from Utilities.modelTrain import mTrain; mTrain()'
+    ```
+    OUTPUT
+    ```sh
 
-Run the `Stream()` function to start a live stream for fire detection.
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
+    enter file name :
+    enter model path :
+    enter threshold :
+    ```
 
-```sh
-python -c 'from Utilities.sDetect import Stream; Stream()'
-```
+    ### Validation
+    Run the `valid()` function to validate your YOLO model.
 
-### Model Training
+    ```sh
+    python -c 'from Utilities.modelValid import mValid; mValid()'
+    ```
+    OUTPUT
+    ```sh
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
+    enter file name :
+    enter model path :
+    enter threshold :
+    ```
+## <h2 style="font-size:30px; ">Configuration
+>Configuring and adapting the fire and smoke detection to your specific requirements is straightforward. Simply follow these steps:
 
-Run the `train()` function to train your own YOLO model.
+1. **Setup Environment:**
+   >Ensure you have all necessary dependencies installed, including Python, required libraries, and any pretrained models you plan to use. Refer to the project's documentation for installation instructions.
 
-```sh
-python -c 'from Utilities.modelTrain import mTrain; mTrain()'
-```
+2. **Prepare Data:**
+   >If you're using custom data, make sure your images are properly formatted and organized. For instance, put your test images in a designated directory.
 
-### Validation
-
-Run the `valid()` function to validate your YOLO model.
-
-
-```sh
-python -c 'from Utilities.modelValid import mValid; mValid()'
-```
-
-
-## Configuration
-
-Modify the parameters in the script to adapt the detection to your needs.
-
-## Examples
-
-- To run live stream detection:
-  ```sh
-  python your_script_name.py
-  ```
- 
-   ### Example Output
-
-   Here's an example of the fire detection output from the live stream:
-
-   ```python
-   [Output Example Here]
+3. **Run the Script:**
+   >Execute the provided Python script, and it will prompt you for the necessary input:
+   ```sh
+   python -m App
    ```
-  This output demonstrates how the system detects fire in real-time from the video stream.
+   
+   >The script will guide you through the process, requesting paths to images, model checkpoints, and optional parameters like threshold values or epochs based on the action you want to perform based on your choice from the displayed menu.
 
+4. **Adapt Parameters:**
 
-- To train a YOLO model:
-  ```sh
-  python your_script_name.py
-  ```
-  ### Example Output
+   >Modify the parameters within the script to tailor the detection to your specific needs. The prompts will guide you to input values such as threshold for confidence scores, number of epochs, and more.
 
-   Here's an example of the fire detection output from the live stream:
+   >Remember that this project is open-source and under the MIT license. Feel free to experiment by hard coding values directly in the script if you're curious about how changes impact detection performance. The entire process is designed to be intuitive, and you have the flexibility to explore and modify parameters for experimentation.
 
-   ```python
-   [Output Example Here]
-   ```
+5. **Review Results:**
+
+   >The script will generate detection results based on your provided inputs. It will display the detected classes, confidence scores and many more useful information.
+
+6. **Fine-Tune as Needed:**
+   >Depending on the results and your specific use case, you can adjust the parameters further and re-run the script to refine the detection.
+   >The entire process is designed to be intuitive and user-friendly. You don't need to edit complex configuration files. Instead, you'll be guided step-by-step through the script's prompts to insert the correct paths, file names, and other values. This flexibility allows you to adapt the detection to various scenarios and achieve accurate results effortlessly.
 
 ## Contributing
-
-Contributions are welcome! Fork the repository, create a new branch, and submit a pull request.
+>Contributions are welcome! Fork the repository, create a new branch, and submit a pull request.
 
 ## License
-
 This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
-
 For questions or feedback, feel free to reach out to [MOUHIB Otman](mailto:mouhib.otm@gmail.com) or [BACCARI Rihab](mailto:mouhib.otm@gmail.com).
 
 ## Acknowledgements
-
 - Ultralytics for YOLO wrapper
 - Roboflow for dataset
 
+## User Reviews
+> "I've been using this forest fire detection system for a while now, and it has significantly improved our response time to potential fire outbreaks. The accuracy and real-time detection capabilities are impressive."
+> — John Doe, Forest Ranger
 
-
-/**********************************/
-
-
-
-   ## User Reviews
-
-   > "I've been using this forest fire detection system for a while now, and it has significantly improved our response time to potential fire outbreaks. The accuracy and real-time detection capabilities are impressive."
-   >
-   > — John Doe, Forest Ranger
-
-   ## Note
-
-
-   > "I've been using this forest fire detection system for a while now, and it has significantly improved our response time to potential fire outbreaks. The accuracy and real-time detection capabilities are impressive."
-   
+ 
