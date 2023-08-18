@@ -1,6 +1,6 @@
 import subprocess
 
-def mValid():
+def m_valid():
     # task2="detect"
     # mode2="val"
     # model2="test/train1/weights/best.pt"

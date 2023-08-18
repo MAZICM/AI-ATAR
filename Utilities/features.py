@@ -4,25 +4,28 @@ from ultralytics import YOLO
 import supervision as sv
 import subprocess
 import os
-from Utilities import roboFlowDataSet, vDetect, sDetect , modelValid, modelTrain
+from Utilities import roboFlowDataSet, vDetect, sDetect, modelValid, modelTrain
+
 
 def get_dataset():
     roboFlowDataSet.roboflow_dataset()
 
-def videoDetect():
+def video_detect():
     vDetect.video_Detect()
 
-def Stream():
-    sDetect.Stream()
+def stream():
+    sDetect.stream()
+
 
 def valid():
-    modelValid.mValid()
+    modelValid.m_valid()
 
 
 def train():
-    modelTrain.mTrain()
+    modelTrain.m_train()
 
-'''def parse_arguments() -> argparse.Namespace:
+'''
+def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='YOLOv8 live')
     parser.add_argument("--webcam-resolution", default=[640, 480], nargs=2, type=int)
     args = parser.parse_args()

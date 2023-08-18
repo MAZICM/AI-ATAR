@@ -15,9 +15,11 @@ def display_menu():
     print("\tTo exit the CLI menu, choose option '6' or press 'Ctrl+C'.")
     print("\t------------------------------------------------------------\n")
 
+
 def get_choice():
     choice = input("Enter your choice: ")
     return choice
+
 
 def get_resp(choice):
     if choice == '1':
@@ -34,11 +36,11 @@ def get_resp(choice):
         return 1
     elif choice == '4':
         print("Stream..............")
-        features.Stream()
+        features.stream()
         return 1
     elif choice == '5':
         print("V..............")
-        features.videoDetect()
+        features.video_detect()
         return 1
 
     elif choice == '6':
