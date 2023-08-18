@@ -3,10 +3,9 @@ from ultralytics import YOLO
 import os
 
 
-
-def video_Detect():
+def video_detect():
     filename = input("enter file name :")
-    model_path= input("enter model path :")
+    model_path = input("enter model path :")
     threshold = input("enter threshold :")
     VIDEOS_DIR = os.path.join('..', 'VideoTest')
     video_path = os.path.join(VIDEOS_DIR, filename)
@@ -15,10 +14,10 @@ def video_Detect():
     ret, frame = cap.read()
     H, W, _ = frame.shape
     out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'MP4V'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
-    #model_path = os.path.join('.', 'test', 'train1', 'weights', 'best.pt')
+    # model_path = os.path.join('.', 'test', 'train1', 'weights', 'best.pt')
     # Load a model
     model = YOLO(model_path)  # load a custom model
-    #threshold = 0.7
+    # threshold = 0.7
 
     while ret:
         results = model(frame)[0]
