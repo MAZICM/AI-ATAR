@@ -3,21 +3,21 @@ from ultralytics import YOLO
 
 def m_train():
 
-    # model_path="/home/kenaro/ForestFireDetection/yolov8m.pt"
+    # model_path="/home/kenaro/ForestFireDetection/yolov8n.pt"
     # data_path="/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml"
-    # epochs=4
+    # epochs=100
     # imgsz=240
     # device=0
     # workers=8
-    # project="labelModel"
-    # name="train1"
+    # project="Train"
+    # name="train1_v8n100-240"
 
     model_path = input("Model Path :")
     data_path = input("Data Path :")
-    epochs = input("Epochs :")
-    imgsz = input("imgsz :")
-    device = input("device :")
-    workers = input("workers :")
+    epochs = int(input("Epochs :"))
+    imgsz = int(input("imgsz :"))
+    device = int(input("device :"))
+    workers = int(input("workers :"))
     project = input("project :")
     name = input("name :")
 
