@@ -3,14 +3,14 @@ from ultralytics import YOLO
 
 def m_train():
 
-    # model_path="/home/kenaro/ForestFireDetection/yolov8m.pt"
+    # model_path="/home/kenaro/ForestFireDetection/yolov8n.pt"
     # data_path="/home/kenaro/ForestFireDetection/AI-Yolo/Wildfire-2/data.yaml"
-    # epochs=4
+    # epochs=100
     # imgsz=240
     # device=0
     # workers=8
-    # project="TrainTest"
-    # name="trainv8m4-240"
+    # project="Train"
+    # name="train1_v8n100-240"
 
     model_path = input("Model Path :")
     data_path = input("Data Path :")
