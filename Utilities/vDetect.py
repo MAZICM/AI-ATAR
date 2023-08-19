@@ -7,7 +7,7 @@ def video_detect():
     filename = input("enter file name :")
     model_path = input("enter model path :")
     threshold = input("enter threshold :")
-    video_dir = os.path.join( 'VideoTest')
+    video_dir = os.path.join('VideoTest')
 
     video_path = os.path.join(video_dir, filename)
     video_path_out = '{}_out.mp4'.format(video_path)
