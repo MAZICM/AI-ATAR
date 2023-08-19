@@ -9,15 +9,15 @@ def m_train():
     # imgsz=240
     # device=0
     # workers=8
-    # project="labelModel"
-    # name="train1"
+    # project="TrainTest"
+    # name="trainv8m4-240"
 
     model_path = input("Model Path :")
     data_path = input("Data Path :")
-    epochs = input("Epochs :")
-    imgsz = input("imgsz :")
-    device = input("device :")
-    workers = input("workers :")
+    epochs = int(input("Epochs :"))
+    imgsz = int(input("imgsz :"))
+    device = int(input("device :"))
+    workers = int(input("workers :"))
     project = input("project :")
     name = input("name :")
 
