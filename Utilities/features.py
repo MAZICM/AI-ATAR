@@ -1,17 +1,13 @@
-import cv2
-import argparse
-from ultralytics import YOLO
-import supervision as sv
-import subprocess
-import os
 from Utilities import roboFlowDataSet, vDetect, sDetect, modelValid, modelTrain
 
 
 def get_dataset():
     roboFlowDataSet.roboflow_dataset()
 
+
 def video_detect():
-    vDetect.video_Detect()
+    vDetect.video_detect()
+
 
 def stream():
     sDetect.stream()
@@ -24,7 +20,10 @@ def valid():
 def train():
     modelTrain.m_train()
 
+
 '''
+
+
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='YOLOv8 live')
     parser.add_argument("--webcam-resolution", default=[640, 480], nargs=2, type=int)

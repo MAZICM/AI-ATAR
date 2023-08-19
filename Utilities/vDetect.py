@@ -7,13 +7,13 @@ def video_detect():
     filename = input("enter file name :")
     model_path = input("enter model path :")
     threshold = input("enter threshold :")
-    VIDEOS_DIR = os.path.join('..', 'VideoTest')
-    video_path = os.path.join(VIDEOS_DIR, filename)
+    video_dir = os.path.join('..', 'VideoTest')
+    video_path = os.path.join(video_dir, filename)
     video_path_out = '{}_out.mp4'.format(video_path)
     cap = cv2.VideoCapture(video_path)
     ret, frame = cap.read()
-    H, W, _ = frame.shape
-    out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'MP4V'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
+    h, w, _ = frame.shape
+    out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'MP4V'), int(cap.get(cv2.CAP_PROP_FPS)), (w, h))
     # model_path = os.path.join('.', 'test', 'train1', 'weights', 'best.pt')
     # Load a model
     model = YOLO(model_path)  # load a custom model

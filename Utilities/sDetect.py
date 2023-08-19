@@ -27,3 +27,4 @@ def stream():
         "show=", "True",
     ]
     subprocess.run(live_stream)
+
