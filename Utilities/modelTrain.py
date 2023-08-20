@@ -17,22 +17,19 @@ def m_train():
         name = input("name :")
         start_time = time.time()
         model = YOLO(model_path)
-        log.logger.info("\nTraining START\n")
+        log.logger.info("\nTraining START")
         model.train(data=data_path, epochs=epochs, imgsz=imgsz, device=device,
                     workers=workers, project=project, name=name, show_labels=True)
     except Exception as e:
         # Code to handle other exceptions
-        print("\n")
-        log.logger.error(f"An error occurred: {e}")
+        end_time = time.time()
+        log.logger.error(f"\nAn error occurred: {e}\nExecution time: %.2f seconds", end_time - start_time)
     else:
         # Code to run if no exception occurred
-        print("\n")
         end_time = time.time()
-        log.logger.info("No errors occurred DONE SUCESS\nExecution time: %.2f seconds", end_time - start_time)
+        log.logger.info("\nNo errors occurred DONE SUCESS\nExecution time: %.2f seconds", end_time - start_time)
 
     finally:
         # Code that will run regardless of whether an exception occurred
-        print("\n")
-        log.logger.warning("Trainning EXIT")
-        print("\n")
+        log.logger.warning("\nTrainning EXIT\n")
 
