@@ -25,7 +25,5 @@ def roboflow_dataset():
         log.logger.info("\nNo errors occurred DONE SUCESS\nExecution time: %.2f seconds", end_time - start_time)
     finally:
         # Code that will run regardless of whether an exception occurred
-        print("\n")
-        log.logger.warning("DatasetDownload EXIT")
-        print("\n")
+        log.logger.warning("\nDatasetDownload EXIT\n")
 

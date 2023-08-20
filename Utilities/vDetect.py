@@ -1,18 +1,20 @@
 import cv2
 from ultralytics import YOLO
 import os
+import time
+from Utilities import log
 
 
 def video_detect():
+    filename = input("enter file name :")
+    model_path = input("enter model path :")
+    threshold = input("enter threshold :")
+    video_dir = os.path.join('VideoTest')
 
-    
+    log.logger.info("\nDetection START")
+    start_time = time.time()
     try:
         # Code that might raise an exception
-        filename = input("enter file name :")
-        model_path = input("enter model path :")
-        threshold = input("enter threshold :")
-        video_dir = os.path.join('VideoTest')
-
         video_path = os.path.join(video_dir, filename)
         video_path_out = '{}_out.mp4'.format(video_path)
         cap = cv2.VideoCapture(video_path)
@@ -39,12 +41,13 @@ def video_detect():
         cv2.destroyAllWindows()
     except Exception as e:
         # Code to handle other exceptions
-        print(f"An error occurred: {e}")
+        end_time = time.time()
+        log.logger.error(f"\nAn error occurred: {e}\nExecution time: %.2f seconds", end_time - start_time)
     else:
         # Code to run if no exception occurred
-        print("No errors occurred DONE SUCESS")
+        # Code to run if no exception occurred
+        end_time = time.time()
+        log.logger.info("\nNo errors occurred DONE SUCESS\nExecution time: %.2f seconds", end_time - start_time)
     finally:
         # Code that will run regardless of whether an exception occurred
-        print("ExitProcess")
-    # Code continues here
-    print("Press Key To Continue with the rest of the program")
+        log.logger.warning("\nDetection EXIT\n")
