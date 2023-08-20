@@ -1,7 +1,25 @@
 from Utilities import features
-
-
+#import logging
+from Utilities import log
+import time
 def display_menu():
+    # Create a custom logger
+    #logger.error("An error occurred: %s", e, exc_info=True)
+
+
+    #logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+    #logger = logging.getLogger(__name__)
+
+    start_time = time.time()
+    # Code to measure performance
+
+# 55555555555
+    # Example usage
+    log.logger.debug("This is a debug message.")
+    log.logger.info("This is an info message.")
+    log.logger.warning("This is a warning message.")
+    log.logger.error("This is an error message.")
+    log.logger.critical("This is a critical message.")
     print("\t-----------------------")
     print("\tWelcome to My CLI Menu")
     print("\t-----------------------\n")
@@ -14,6 +32,9 @@ def display_menu():
     print("\n\t----------------------------------------------------------")
     print("\tTo exit the CLI menu, choose option '6' or press 'Ctrl+C'.")
     print("\t------------------------------------------------------------\n")
+    end_time = time.time()
+    log.logger.info("Execution time: %.2f seconds", end_time - start_time)
+    print("\n\n")
 
 
 def get_choice():
@@ -44,7 +65,7 @@ def get_resp(choice):
         return 1
 
     elif choice == '6':
-        print("Goodbye!")
+        log.logger.info("\nThank you for Running me ! \nGood bye ! :)\n")
         return 0
 
     else:
@@ -60,8 +81,12 @@ def main():
         x = get_resp(choice)
 
 
+
+
 if __name__ == "__main__":
     main()
+
+
 
 
 """
