@@ -3,13 +3,12 @@ import time
 from Utilities import log
 
 def roboflow_dataset():
-
+    rbflw_api_key = input("Enter your API_key: ")
+    rbflw_workspace = input("Enter your workspace: ")
+    rbflw_project = input("Enter your project: ")
+    rbflw_download = input("Enter your Download:")
     try:
         # Code that might raise an exception
-        rbflw_api_key = input("Enter your API_key: ")
-        rbflw_workspace = input("Enter your workspace: ")
-        rbflw_project = input("Enter your project: ")
-        rbflw_download = input("Enter your Download:")
         log.logger.info("\nDOWNLOAD START")
         start_time = time.time()
         rf = Roboflow(api_key=rbflw_api_key)
