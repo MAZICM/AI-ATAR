@@ -9,7 +9,7 @@
 <p style="font-size:20px; ">The Real-Time Forest Fire Detection project employs cutting-edge deep learning techniques to detect and respond to forest fires promptly. Leveraging YOLO (You Only Look Once) models and efficient object detection algorithms, this project aims to contribute to early fire detection, reducing the risk of catastrophic damage to our natural landscapes.</p>
 
 ## <h2 style="font-size:30px; ">Project in Action
-   ![Fire Detection Demo](2.mp4_out.gif)
+   ![Fire Detection Demo](src/2.mp4_out.gif)
 This GIF demonstrates how the fire detection system detects fire in a real-time video stream.
 
 ## <h2 style="font-size:30px; ">Features
