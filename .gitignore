@@ -5,12 +5,7 @@ Wildfire-2
 *.ipynb
 *.avi
 t.py
-yolov8m.pt
-yolov8n.pt
 __pycache__/
 bus.jpg
-runs
-r.py
 qodana.yaml
 Pvenv/
-txt.txt
