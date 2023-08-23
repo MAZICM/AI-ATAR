@@ -7,32 +7,20 @@ def m_train():
     start_time = time.time()
     try:
         # Code that might raise an exception
-        # model_path = input("Model Path :") #
         f = ['yolov8n.pt','yolov8s.pt','yolov8m.pt','yolov8l.pt','yolov8x.pt']
         model_path = os.getcwd() + "/src/yolov8DefaultModels/"
-        # f = os.listdir(model_path)
         model_name = flexMenu.display_options(f)
         model_path = model_path + model_name
-        # data_path = input("Data Path :")   #
         data_path = "src/datasets"
         f = os.listdir(data_path)
-        # os.chdir("src/datasets/")
         y = os.getcwd()
         x = flexMenu.display_options(f)
         data_path = y+"/"+data_path + "/" + x + "/data.yaml"
-        print("data : "+data_path)
-
-
-        # data_path = data_path + f +""
-
-
-        epochs = int(input("Epochs :"))
-        imgsz = int(input("imgsz :"))
-        device = int(input("device :"))
-        workers = int(input("workers :"))
-        # project = input("project :")
+        epochs = int(input("\t\t Insert Epochs Value:"))
+        imgsz = int(input("\t\t Insert imgsz Value:"))
+        device = int(input("\t\t Insert device Value:"))
+        workers = int(input("\t\t Insert workers Value:"))
         project = "Train"
-        # name = input("name :")
         if model_name == "yolov8n.pt":
             m = "n"
         elif model_name == "yolov8s.pt":
