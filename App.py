@@ -15,11 +15,11 @@ def display_menu():
 
 # 55555555555
     # Example usage
-    log.logger.debug("This is a debug message.")
-    log.logger.info("This is an info message.")
-    log.logger.warning("This is a warning message.")
-    log.logger.error("This is an error message.")
-    log.logger.critical("This is a critical message.")
+    # log.logger.debug("This is a debug message.")
+    # log.logger.info("This is an info message.")
+    # log.logger.warning("This is a warning message.")
+    # log.logger.error("This is an error message.")
+    # log.logger.critical("This is a critical message.")
     print("\t-----------------------")
     print("\tWelcome to My CLI Menu")
     print("\t-----------------------\n")
@@ -90,34 +90,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
-
-"""
-def live():
-    VC=0
-    model_path="/home/kenaro/ForestFireDetection/AI-Yolo/labelModel/train1/weights/best.pt"
-    window_name=("yolov8 live Stream")
-    args = parse_arguments()
-    frame_width, frame_height = args.webcam_resolution
-    cap = cv2.VideoCapture(VC)
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_width)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, frame_height)
-    model = YOLO(model_path)
-    box_annotator = sv.BoxAnnotator(
-        thickness=1,
-        text_thickness=2,
-        text_scale=1
-    )
-    while True:
-        ret, frame = cap.read()
-        results = model(frame)[0]
-        detections = sv.Detections.from_yolov8(results)
-
-        frame = box_annotator.annotate(scene=frame, detections=detections)
-        cv2.imshow(window_name, frame)
-        if cv2.waitKey(1) == ord("q"):
-            cap.release()
-            cv2.destroyAllWindows()
-            break
-"""
