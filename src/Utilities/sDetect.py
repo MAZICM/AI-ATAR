@@ -69,7 +69,7 @@ def stream():
             detections = sv.Detections.from_yolov8(results[0])
             frame = box_annotator.annotate(scene=frame, detections=detections)
             if not detections.class_id.any() == 0:
-                print('ALAAAAAAARRM !')
+                print('ALAAAAAAARRM RINGING FIRE !!!!!')
             cv2.imshow("yolov8", frame)
             writer.write(frame)
             # print(frame.shape)
