@@ -26,13 +26,13 @@ def create_video_writer(video_cap, output_filename):
 
 def stream():
     #mod = input("model :")
-    print(datetime.date.today())
+    #print(datetime.date.today())
     current_time = datetime.datetime.now()
     desired_format = "%Y-%m-%d_%H-%M-%S_"
     formatted_time = current_time.strftime(desired_format)
-    print(formatted_time)
+    #print(formatted_time)
     name = formatted_time
-    #source = int(input("source :"))
+    source = int(input("source :"))
     #model = YOLO(mod)
     log.logger.info("\nSTREAM START")
     start_time = time.time()
@@ -61,13 +61,15 @@ def stream():
         writer = create_video_writer(cap, "runs/Streams/"+formatted_time+train+m+".mp4")
 
         box_annotator = sv.BoxAnnotator(thickness=2, text_thickness=2, text_scale=1)
-        os.chdir("runs/Streams")
+        os.chdir("./runs/Streams")
+
         while True:
             ret, frame = cap.read()
             results = model(frame)
             detections = sv.Detections.from_yolov8(results[0])
-            #print(detections)
             frame = box_annotator.annotate(scene=frame, detections=detections)
+            if not detections.class_id.any() == 0:
+                print('ALAAAAAAARRM !')
             cv2.imshow("yolov8", frame)
             writer.write(frame)
             # print(frame.shape)
@@ -79,6 +81,7 @@ def stream():
         writer.release()
         cv2.destroyAllWindows()
         os.chdir("../../")
+
 
 
     except Exception as e:

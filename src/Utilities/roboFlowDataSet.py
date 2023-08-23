@@ -24,9 +24,10 @@ def roboflow_dataset():
         print("\n")
         os.chdir("src/datasets/")
         start_time = time.time()
-        rf = Roboflow(api_key=rbflw_api_key)
-        project = rf.workspace(rbflw_workspace).project(rbflw_project)
-        project.version(2).download(rbflw_download)
+
+        rf = Roboflow(api_key="1F10ZNdjV7NFepJ29yoE")
+        project = rf.workspace("vishwaketu-malakar-o9d0b").project("fire-detection-7oyym")
+        dataset = project.version(6).download("yolov8")
 
     except Exception as e:
         # Code to handle other exceptions

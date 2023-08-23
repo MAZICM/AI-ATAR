@@ -1,6 +1,14 @@
-from src.Utilities import roboFlowDataSet, vDetect, sDetect, modelValid, modelTrain
+from src.Utilities import roboFlowDataSet, vDetect, sDetect, modelValid, modelTrain, rTrain
 import sys
 
+def resume_train():
+    rTrain.r_train()
+    action = "Do you want to proceed?"
+    if get_user_confirmation(action):
+        print("User confirmed to proceed.")
+    else:
+        print("User chose not to proceed.")
+        sys.exit()  # Program will exit here.
 def get_dataset():
     roboFlowDataSet.roboflow_dataset()
     action = "Do you want to proceed?"

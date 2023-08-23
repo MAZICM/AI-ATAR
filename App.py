@@ -28,7 +28,8 @@ def display_menu():
     print("\t\t3. Valid")
     print("\t\t4. Live Test")
     print("\t\t5. test on an existing file")
-    print("\t\t6. Quit")
+    print("\t\t6. Resume existing Train")
+    print("\t\t7. Quit")
     print("\n\t----------------------------------------------------------")
     print("\tTo exit the CLI menu, choose option '6' or press 'Ctrl+C'.")
     print("\t------------------------------------------------------------\n")
@@ -63,8 +64,11 @@ def get_resp(choice):
         print("V..............")
         features.video_detect()
         return 1
-
     elif choice == '6':
+        print("RT..............")
+        features.resume_train()
+        return 1
+    elif choice == '7':
         log.logger.info("\nThank you for Running me ! \nGood bye ! :)\n")
         return 0
 
