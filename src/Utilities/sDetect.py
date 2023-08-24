@@ -11,7 +11,6 @@ from src.Utilities import flexMenu
 
 
 def create_video_writer(video_cap, output_filename):
-
     # grab the width, height, and fps of the frames in the video stream.
     frame_width = int(video_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(video_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -24,16 +23,13 @@ def create_video_writer(video_cap, output_filename):
 
     return writer
 
+
 def stream():
-    #mod = input("model :")
-    #print(datetime.date.today())
     current_time = datetime.datetime.now()
     desired_format = "%Y-%m-%d_%H-%M-%S_"
     formatted_time = current_time.strftime(desired_format)
-    #print(formatted_time)
     name = formatted_time
     source = int(input("source :"))
-    #model = YOLO(mod)
     log.logger.info("\nSTREAM START")
     start_time = time.time()
 
@@ -42,6 +38,7 @@ def stream():
         parser.add_argument("--webcam-resolution", default=[1280, 720], nargs=2, type=int)  # 480, 640, 3
         args = parser.parse_args()
         return args
+
     try:
         model_path = "/home/kenaro/ForestFireDetection/AI-Yolo/Train/"
         x = os.listdir(model_path)
@@ -58,7 +55,7 @@ def stream():
         cap = cv2.VideoCapture(0)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_width)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_height)
-        writer = create_video_writer(cap, "runs/Streams/"+formatted_time+train+m+".mp4")
+        writer = create_video_writer(cap, "runs/Streams/" + formatted_time + train + m + ".mp4")
 
         box_annotator = sv.BoxAnnotator(thickness=2, text_thickness=2, text_scale=1)
         os.chdir("./runs/Streams")
@@ -75,7 +72,6 @@ def stream():
             # print(frame.shape)
 
             if cv2.waitKey(30) == 27:
-
                 break
         cap.release()
         writer.release()
@@ -97,5 +93,3 @@ def stream():
         # Code that will run regardless of whether an exception occurred
         log.logger.critical("\nSTREAM EXIT")
         print("\n")
-
-

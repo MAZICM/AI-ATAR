@@ -5,23 +5,17 @@ from src.Utilities import flexMenu
 import os
 
 def m_valid():
-    # mod = input("model :")
-    mod = "./Train/train-e1-i240-w500-v8n/weights/best.pt"
-    # name2 = input("name :")
-
     f = os.listdir("./Train/")
-
     name = flexMenu.display_options(f)
-    print("name is : " + name)
-
+    print("\n\t Validate Best or Last Weights : ")
     f = os.listdir("./Train/"+name+"/weights/")
     filename = flexMenu.display_options(f)
     mod = "./Train/"+name+"/weights/"+filename
     filename = filename.rsplit(".", 1)[0]
     name2 = name+"_eval_" + filename
     log.logger.info("\nValidation START")
+    print("")
     start_time = time.time()
-
     try:
         model = YOLO(mod)
         results = model.val(project="Vaild", name=name2)

@@ -14,12 +14,14 @@ def m_train():
         data_path = "src/datasets"
         f = os.listdir(data_path)
         y = os.getcwd()
+        print("\n\t DATASETS :")
         x = flexMenu.display_options(f)
         data_path = y+"/"+data_path + "/" + x + "/data.yaml"
-        epochs = int(input("\t\t Insert Epochs Value:"))
-        imgsz = int(input("\t\t Insert imgsz Value:"))
-        device = int(input("\t\t Insert device Value:"))
-        workers = int(input("\t\t Insert workers Value:"))
+        print("\n\tConfigure Training Parameters : ")
+        epochs =  int(input("\n\t  ======> Insert Epochs Value   : "))
+        imgsz =   int(input("\n\t  ======> Insert imgsz Value    : "))
+        device =  int(input("\n\t  ======> Insert device Value   : "))
+        workers = int(input("\n\t  ======> Insert workers Value  : "))
         project = "Train"
         if model_name == "yolov8n.pt":
             m = "n"

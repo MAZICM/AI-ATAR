@@ -1,62 +1,75 @@
 from src.Utilities import roboFlowDataSet, vDetect, sDetect, modelValid, modelTrain, rTrain
 import sys
+import logging
+from src.Utilities import log
 
 def resume_train():
+
     rTrain.r_train()
-    action = "Do you want to proceed?"
+    action = "\n\t  ======> Do you want to proceed?"
     if get_user_confirmation(action):
-        print("User confirmed to proceed.")
+        print("")
+        log.logger.critical("User confirmed to proceed.")
     else:
-        print("User chose not to proceed.")
+        print("")
+        log.logger.critical("User chose not to proceed.")
         sys.exit()  # Program will exit here.
 def get_dataset():
     roboFlowDataSet.roboflow_dataset()
-    action = "Do you want to proceed?"
+    action = "\n\t  ======> Do you want to proceed?"
     if get_user_confirmation(action):
-        print("User confirmed to proceed.")
+        print("")
+        log.logger.critical("User confirmed to proceed.")
     else:
-        print("User chose not to proceed.")
+        print("")
+        log.logger.critical("User chose not to proceed.")
         sys.exit()  # Program will exit here.
 
 
 def video_detect():
     vDetect.video_detect()
 
-    action = "Do you want to proceed?"
+    action = "\n\t  ======> Do you want to proceed?"
     if get_user_confirmation(action):
-        print("User confirmed to proceed.")
+        print("")
+        log.logger.critical("User confirmed to proceed.")
     else:
-        print("User chose not to proceed.")
+        print("")
+        log.logger.critical("User chose not to proceed.")
         sys.exit()  # Program will exit here.
 
 
 def stream():
     sDetect.stream()
-    action = "Do you want to proceed?"
+    action = "\n\t  ======> Do you want to proceed?"
     if get_user_confirmation(action):
-        print("User confirmed to proceed.")
+        log.logger.critical("User confirmed to proceed.")
     else:
-        print("User chose not to proceed.")
+        log.logger.critical("User chose not to proceed.")
         sys.exit()  # Program will exit here.
 
 
 def valid():
     modelValid.m_valid()
-    action = "Do you want to proceed?"
+    action = "\n\t  ======> Do you want to proceed?"
     if get_user_confirmation(action):
-        print("User confirmed to proceed.")
+        print("")
+        log.logger.critical("User confirmed to proceed.")
     else:
-        print("User chose not to proceed.")
+        print("")
+        log.logger.critical("User chose not to proceed.")
         sys.exit()  # Program will exit here.
 
 
 def train():
     modelTrain.m_train()
-    action = "Do you want to proceed?"
+    action = "\n\t  ======> Do you want to proceed?"
     if get_user_confirmation(action):
-        print("User confirmed to proceed.")
+        print("")
+        log.logger.critical("User confirmed to proceed.")
     else:
-        print("User chose not to proceed.")
+        print("")
+        log.logger.critical("User chose not to proceed.")
         sys.exit()  # Program will exit here.
 
 
@@ -68,5 +81,7 @@ def get_user_confirmation(message):
         elif user_input == 'n':
             return False
         else:
-            print("Invalid input. Please enter 'Y' for Yes or 'N' for No.")
+            print("")
+            log.logger.error("Invalid input. Please enter 'Y' for Yes or 'N' for No.")
+            print("")
 
