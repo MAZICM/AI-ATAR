@@ -24,13 +24,13 @@ def display_menu():
     print("\t-----------------------\n")
     print("\t\t1. Download RoboFlow straining dataset")
     print("\t\t2. Train")
-    print("\t\t3. Valid")
-    print("\t\t4. Live Test")
-    print("\t\t5. test on an existing file")
-    print("\t\t6. Resume existing Train")
+    print("\t\t3. Resume existing Train")
+    print("\t\t4. Valid")
+    print("\t\t5. Live Test")
+    print("\t\t6. test on an existing file")
     print("\t\t7. Quit")
     print("\n\t----------------------------------------------------------")
-    print("\tTo exit the CLI menu, choose option '6' or press 'Ctrl+C'.")
+    print("\tTo exit the CLI menu, choose option '7' or press 'Ctrl+C'.")
     print("\t------------------------------------------------------------\n")
     end_time = time.time()
     log.logger.info("Execution time: %.2f seconds", end_time - start_time)
@@ -51,19 +51,19 @@ def get_resp(choice):
         print("\n\t DEFAULT MODELS :")
         features.train()
         return 1
-    elif choice == '3':
+    elif choice == '4':
         print("\n\t Trained Model to Validate : ")
         features.valid()
         return 1
-    elif choice == '4':
+    elif choice == '5':
         print("Stream..............")
         features.stream()
         return 1
-    elif choice == '5':
+    elif choice == '6':
         print("V..............")
         features.video_detect()
         return 1
-    elif choice == '6':
+    elif choice == '3':
         print("RT..............")
         features.resume_train()
         return 1

@@ -10,7 +10,7 @@
 
 ## <h2 style="font-size:30px; ">Project in Action
    ![Fire Detection Demo](src/2.mp4_out.gif)
-This GIF demonstrates how the fire detection system detects fire in a real-time video stream.
+<br>This GIF demonstrates how the fire detection system detects fire in a real-time video stream.
 
 ## <h2 style="font-size:30px; ">Features
 - **Video-Based Detection**: Detect fires in real-time from video streams, enabling swift intervention.
@@ -21,14 +21,36 @@ This GIF demonstrates how the fire detection system detects fire in a real-time 
 
 ## <h2 style="font-size:30px; "> Table of Contents
 
-- [Installation](#installation)
+- [Installation](#Installation)
 - [Usage](#usage)
   - [Usage1](#usage1)
+    - [App.py](#usage1)
   - [Usage2](#usage1)
+    - [Download dataset using roboflow](#usage1)
+    - [Train a model](#usage1)
+    - [Resume incomplete Train](#usage1)
+    - [Validate Trained model](#usage1)
+    - [Test model on local video Sample](#usage1)
+    - [Test model on live stream](#usage1)
+    
 - [Configuration](#configuration)
 - [Datasets](#datasets)
 - [Models](#models)
-- [Examples](#examples)
+- [Example](#examples)
+  - [Dataset](#Dataset)
+  <br>will in clude the link of the dataset used and how to extract the elements needed for the download 
+  - [Train](#Train)
+  <br> the training method used and how access the training folder
+  - [Resume Train](#resume train)
+  <br> how to resumed a crashed training
+  - [Validate](#Validate)
+  <br> how to validate a trained model and access the validation folder
+  - [Performance metrix evaluation](#performance metrics evaluation)
+  <br> compare some performance metrics of the pretrained model
+  - [Test on local video sample](#Test on local video sample)
+  <br> test the trained models on local video samples and access the results 
+  - [Test Real Time](#test real time)
+  <br> test the trained models on live stream and access the saved results 
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -77,23 +99,34 @@ This GIF demonstrates how the fire detection system detects fire in a real-time 
     (venv) user@ubuntu:~/AI-Yolo$ python -m App
     
     
-            -----------------------
-            Welcome to My CLI Menu
-            -----------------------
-    
-                    1. Download RoboFlow straining dataset
-                    2. Train
-                    3. Valid
-                    4. Live Test
-                    5. test on an existing file
-                    6. Quit
-    
-            ----------------------------------------------------------
-            To exit the CLI menu, choose option '6' or press 'Ctrl+C'.
-            ------------------------------------------------------------
-    
-    Enter your choice: 
-    
+    Welcome To ATAR ! :)
+    2023-08-25 23:30:09,558 - INFO
+
+
+        -----------------------
+        Welcome to My CLI Menu
+        -----------------------
+
+                1. Download RoboFlow straining dataset
+                2. Train
+                3. Resume existing Train
+                4. Valid
+                5. Live Test
+                6. test on an existing file
+                7. Quit
+
+        ----------------------------------------------------------
+        To exit the CLI menu, choose option '7' or press 'Ctrl+C'.
+        ------------------------------------------------------------
+
+    Execution time: 0.00 seconds
+    2023-08-25 23:30:09,559 - INFO
+
+
+
+
+          ======> Enter your choice : 
+
     ```
 2. ### Using Each utility on it s own :
 
@@ -101,57 +134,75 @@ This GIF demonstrates how the fire detection system detects fire in a real-time 
     Run the `videoDetect()` function to detect fires in a video file.
 
     ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from src.Utilities.vDetect import video_detect; video_detect()'
     ```
     OUTPUT
     ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
-    enter file name :
-    enter model path :
-    enter threshold :
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from src.Utilities.vDetect import video_detect; video_detect()'
+
+
+                1. video1.mp4
+
+          ======> Enter the number of your choice: 
+
     ```
     ### Live Stream Detection
     
     Run the `Stream()` function to start a live stream for fire detection.
     
     ```sh
-    python -c 'from Utilities.sDetect import Stream; Stream()'
+    python -c 'from src.Utilities.sDetect import stream; stream()'
     ```
     OUTPUT
     ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
-    enter file name :
-    enter model path :
-    enter threshold :
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from src.Utilities.sDetect import stream; stream()'
+
+    STREAM START
+    2023-08-25 23:53:12,919 - INFO
+
+          ======> source :
     ```
     ### Model Training
     
     Run the `train()` function to train your own YOLO model.
     
     ```sh
-    python -c 'from Utilities.modelTrain import mTrain; mTrain()'
+    python -c 'from src.Utilities.modelTrain import m_train; m_train()'
     ```
     OUTPUT
     ```sh
 
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
-    enter file name :
-    enter model path :
-    enter threshold :
+    (venv) user@ubuntu:~/AI-Yolo$  python -c 'from src.Utilities.modelTrain import m_train; m_train()'
+
+
+                1. yolov8n.pt
+                2. yolov8s.pt
+                3. yolov8m.pt
+                4. yolov8l.pt
+                5. yolov8x.pt
+
+          ======> Enter the number of your choice: 
     ```
 
     ### Validation
     Run the `valid()` function to validate your YOLO model.
 
     ```sh
-    python -c 'from Utilities.modelValid import mValid; mValid()'
+    python -c 'from src.Utilities.modelValid import m_valid; m_valid()'
     ```
     OUTPUT
     ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from Utilities.vDetect import video_Detect; video_Detect()'
-    enter file name :
-    enter model path :
-    enter threshold :
+    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from src.Utilities.modelValid import m_valid; m_valid()'
+
+
+                1. train-e100-i256-w8-v8s
+                2. train-e300-i240-w8-v8s
+                3. train-e100-i256-w8-v8n
+                4. train-e300-i256-w8-v8n
+                5. train-e50-i256-w8-v8n
+                6. train-e50-i256-w8-v8s
+
+          ======> Enter the number of your choice: 
     ```
 ## <h2 style="font-size:30px; ">Configuration
 >Configuring and adapting the fire and smoke detection to your specific requirements is straightforward. Simply follow these steps:

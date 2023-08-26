@@ -29,7 +29,7 @@ def stream():
     desired_format = "%Y-%m-%d_%H-%M-%S_"
     formatted_time = current_time.strftime(desired_format)
     name = formatted_time
-    source = int(input("source :"))
+
     log.logger.info("\nSTREAM START")
     start_time = time.time()
 
@@ -40,6 +40,7 @@ def stream():
         return args
 
     try:
+        source = int(input("\n\t  ======> source :"))
         model_path = "/home/kenaro/ForestFireDetection/AI-Yolo/Train/"
         x = os.listdir(model_path)
         train = flexMenu.display_options(x)
