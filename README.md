@@ -22,6 +22,7 @@
 ## <h2 style="font-size:30px; "> Table of Contents
 
 - [Installation](#Installation)
+- [Configuration](#configuration)
 - [Usage](#usage)
   - [Usage1](#usage1)
     - [App.py](#usage1)
@@ -32,8 +33,6 @@
     - [Validate Trained model](#usage1)
     - [Test model on local video Sample](#usage1)
     - [Test model on live stream](#usage1)
-    
-- [Configuration](#configuration)
 - [Datasets](#datasets)
 - [Models](#models)
 - [Example](#examples)
@@ -87,6 +86,36 @@
    ```sh
    (venv) user@ubuntu:~/AI-Yolo$ pip install ultralytics opencv-python
    ```
+## <h2 style="font-size:30px; ">Configuration
+>Configuring and adapting the fire and smoke detection to your specific requirements is straightforward. Simply follow these steps:
+
+1. **Setup Environment:**
+   >Ensure you have all necessary dependencies installed, including Python, required libraries, and any pretrained models you plan to use. Refer to the project's documentation for installation instructions.
+
+2. **Prepare Data:**
+   >If you're using custom data, make sure your images are properly formatted and organized. For instance, put your test images in a designated directory.
+
+3. **Run the Script:**
+   >Execute the provided Python script, and it will prompt you for the necessary input:
+   ```sh
+   python -m App
+   ```
+   
+   >The script will guide you through the process, requesting paths to images, model checkpoints, and optional parameters like threshold values or epochs based on the action you want to perform based on your choice from the displayed menu.
+
+4. **Adapt Parameters:**
+
+   >Modify the parameters within the script to tailor the detection to your specific needs. The prompts will guide you to input values such as threshold for confidence scores, number of epochs, and more.
+
+   >Remember that this project is open-source and under the MIT license. Feel free to experiment by hard coding values directly in the script if you're curious about how changes impact detection performance. The entire process is designed to be intuitive, and you have the flexibility to explore and modify parameters for experimentation.
+
+5. **Review Results:**
+
+   >The script will generate detection results based on your provided inputs. It will display the detected classes, confidence scores and many more useful information.
+
+6. **Fine-Tune as Needed:**
+   >Depending on the results and your specific use case, you can adjust the parameters further and re-run the script to refine the detection.
+   >The entire process is designed to be intuitive and user-friendly. You don't need to edit complex configuration files. Instead, you'll be guided step-by-step through the script's prompts to insert the correct paths, file names, and other values. This flexibility allows you to adapt the detection to various scenarios and achieve accurate results effortlessly.
 
 ## <h2 style="font-size:30px; "> Usage
 1. ### Using App.py file :
@@ -204,37 +233,21 @@
 
           ======> Enter the number of your choice: 
     ```
-## <h2 style="font-size:30px; ">Configuration
->Configuring and adapting the fire and smoke detection to your specific requirements is straightforward. Simply follow these steps:
-
-1. **Setup Environment:**
-   >Ensure you have all necessary dependencies installed, including Python, required libraries, and any pretrained models you plan to use. Refer to the project's documentation for installation instructions.
-
-2. **Prepare Data:**
-   >If you're using custom data, make sure your images are properly formatted and organized. For instance, put your test images in a designated directory.
-
-3. **Run the Script:**
-   >Execute the provided Python script, and it will prompt you for the necessary input:
-   ```sh
-   python -m App
-   ```
-   
-   >The script will guide you through the process, requesting paths to images, model checkpoints, and optional parameters like threshold values or epochs based on the action you want to perform based on your choice from the displayed menu.
-
-4. **Adapt Parameters:**
-
-   >Modify the parameters within the script to tailor the detection to your specific needs. The prompts will guide you to input values such as threshold for confidence scores, number of epochs, and more.
-
-   >Remember that this project is open-source and under the MIT license. Feel free to experiment by hard coding values directly in the script if you're curious about how changes impact detection performance. The entire process is designed to be intuitive, and you have the flexibility to explore and modify parameters for experimentation.
-
-5. **Review Results:**
-
-   >The script will generate detection results based on your provided inputs. It will display the detected classes, confidence scores and many more useful information.
-
-6. **Fine-Tune as Needed:**
-   >Depending on the results and your specific use case, you can adjust the parameters further and re-run the script to refine the detection.
-   >The entire process is designed to be intuitive and user-friendly. You don't need to edit complex configuration files. Instead, you'll be guided step-by-step through the script's prompts to insert the correct paths, file names, and other values. This flexibility allows you to adapt the detection to various scenarios and achieve accurate results effortlessly.
-
+## <h2 style="font-size:30px; ">Example
+## [Dataset](#Dataset)
+here we talk about the data set used in the training how to download throught roboflow
+## [Train](#Train)
+the training method used and how access the training folder
+## [Resume Train](#resume train)
+how to resumed a crashed training
+## [Validate](#Validate)
+how to validate a trained model and access the validation folder
+## [Performance metrix evaluation](#performance metrics evaluation)
+compare some performance metrics of the pretrained model throught the be
+## [Test on local video sample](#Test on local video sample)
+test the trained models on local video samples and access the results 
+## [Test Real Time](#test real time)
+test the trained models on live stream and access the saved results 
 ## Contributing
 >Contributions are welcome! Fork the repository, create a new branch, and submit a pull request.
 
