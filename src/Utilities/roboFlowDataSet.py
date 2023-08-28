@@ -7,16 +7,23 @@ import os
 def roboflow_dataset():
     start_time = time.time()
 
-    rbflw_api_key = "BtcWZsdvGqmTQ2Sfmgbj"
-    rbflw_workspace = "moho-rahimi-xyr0w"
-    rbflw_project = "wildfire-ryisc"
-    rbflw_download = "yolov8"
+    # rbflw_api_key = "BtcWZsdvGqmTQ2Sfmgbj"
+    # rbflw_workspace = "moho-rahimi-xyr0w"
+    # rbflw_project = "wildfire-ryisc"
+    # rbflw_download = "yolov8"
 
-    # rbflw_api_key = input("Enter your API_key: ")
-    # rbflw_workspace = input("Enter your workspace: ")
+    rbflw_api_key = input("Enter your API_key : ")
+    rbflw_workspace = input("Enter your workspace : ")
+    rbflw_project = input("Enter your project : ")
+    rbflw_download = input("Enter your Download :")
+
+    #!pip install roboflow
     #
-    # rbflw_project = input("Enter your project: ")
-    # rbflw_download = input("Enter your Download:")
+    # from roboflow import Roboflow
+    # rf = Roboflow(api_key="1F10ZNdjV7NFepJ29yoE")
+    # project = rf.workspace("vishwaketu-malakar-o9d0b").project("fire-detection-7oyym")
+    # dataset = project.version(6).download("yolov8")
+    #
 
     try:
         # Code that might raise an exception

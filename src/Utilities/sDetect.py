@@ -40,8 +40,8 @@ def stream():
         return args
 
     try:
-        source = int(input("\n\t  ======> source :"))
-        #source = "rtsp://www.hessdalen.org:1935/rtplive/_definst_/hessdalen03.stream"
+        # source = int(input("\n\t  ======> source :"))
+        # source = "rtsp://www.hessdalen.org:1935/rtplive/_definst_/hessdalen03.stream"
         model_path = "/home/kenaro/ForestFireDetection/AI-Yolo/Train/"
         x = os.listdir(model_path)
         train = flexMenu.display_options(x)

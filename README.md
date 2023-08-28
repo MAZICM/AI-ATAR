@@ -3,7 +3,8 @@
 
 
 
-# <h1 style="font-size:40px; text-align:center;"> Real-Time Forest Fire Detection
+# <h1 style="font-size:40px; text-align:center;"> AI-ATAR
+<h6 style="font-size:40px; text-align:center;"> Real-Time Forest Fire Detection
 
 ## <h2 style="font-size:30px; ">Introduction
 <p style="font-size:20px; ">The Real-Time Forest Fire Detection project employs cutting-edge deep learning techniques to detect and respond to forest fires promptly. Leveraging YOLO (You Only Look Once) models and efficient object detection algorithms, this project aims to contribute to early fire detection, reducing the risk of catastrophic damage to our natural landscapes.</p>
@@ -17,6 +18,19 @@
 - **Efficient Algorithms**: Utilize YOLO models for accurate and rapid fire detection.
 - **Customization**: Easily adapt the models and configurations to suit specific detection requirements.
 - **Live Streaming**: Enable live fire detection from webcams or video sources for immediate monitoring.
+# YOLOv8 Model Training using the `python -m App` Command
+
+Welcome to the guide on how to train a YOLOv8 model using the `python -m App` command. YOLOv8 is a popular object detection algorithm known for its speed and accuracy. This guide will walk you through the steps required to train your own YOLOv8 model using the provided Python script.
+
+## Prerequisites
+
+Before you begin, make sure you have the following prerequisites installed:
+
+- Python (>= 3.6)
+- PyTorch (>= 1.7)
+- CUDA (for GPU training, recommended)
+- OpenCV
+- Requirements specified in `requirements.txt` (provided with the repository)
 
 
 ## <h2 style="font-size:30px; "> Table of Contents
@@ -38,18 +52,28 @@
 - [Example](#examples)
   - [Dataset](#Dataset)
   <br>will in clude the link of the dataset used and how to extract the elements needed for the download 
+    <br>https://universe.roboflow.com/vishwaketu-malakar-o9d0b/fire-detection-7oyym/dataset/6#
   - [Train](#Train)
   <br> the training method used and how access the training folder
+  we trained the models n s m for each for 3 different epochs 50 100 300 and you will find your training folder on this path
   - [Resume Train](#resume train)
-  <br> how to resumed a crashed training
+  <br> how to resumed a crashed training<br>
+  incase you trainning stopped or crashed after finishing the first epoch the training can resume this way 
   - [Validate](#Validate)
   <br> how to validate a trained model and access the validation folder
+  <br> we can validate our trained models this way and you ll find your validation folder under this path 
   - [Performance metrix evaluation](#performance metrics evaluation)
   <br> compare some performance metrics of the pretrained model
   - [Test on local video sample](#Test on local video sample)
   <br> test the trained models on local video samples and access the results 
+  <br> this is how you test on local samples :
+  <br> here you put the video here you ll find the results and that s how you do it
+  
   - [Test Real Time](#test real time)
-  <br> test the trained models on live stream and access the saved results 
+  <br> test the trained models on live stream and access the saved results
+  <br> this is how you test on local samples :
+  <br> here you put the video here you ll find the results and that s how you do it
+  
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -235,20 +259,88 @@
     ```
 ## <h2 style="font-size:30px; ">Example
 ## [Dataset](#Dataset)
-here we talk about the data set used in the training how to download throught roboflow
+Roboflow, your premier data annotation and dataset resource, 
+simplifies the annotation process for your images and videos 
+while also offering a repository of high-quality, pre-existing 
+datasets for your convenience. <br>Seamlessly enhance your machine 
+learning projects with accurately labeled data or 
+access to curated datasets.
+
+## Why Roboflow?
+
+- **Efficient Annotation:** Annotate images and videos quickly with intuitive tools.
+- **Diverse Annotations:** Support for object detection, segmentation, and more.
+- **High-Quality Datasets:** Explore and download datasets for various applications.
+- **Community:** Join a collaborative community of ML enthusiasts.
+
+## Getting Started
+
+1. **Sign Up:** Create an account at [Roboflow](https://roboflow.com/signup).
+2. **Annotate:** Label your data using Roboflow tools.
+3. **Download:** Find and use datasets for your projects.
+4. **Connect:** Engage with the community and share insights.
+## Recommended Fire Detection Dataset
+Check out the curated "Fire Detection" dataset by vishwaketu-malakar-o9d0b:
+
+> We have used this dataset for the testing of this tool 
+> we will be evaluating the performance later on together on some models trained under this dataset
+- [Fire Detection Dataset](https://universe.roboflow.com/vishwaketu-malakar-o9d0b/fire-detection-7oyym/dataset/6#)
+> follow this preview in order to download your dataset : 
+>- either dowload as zip and extract and put on the directory "src/datasets/" and move directly to the training process
+>- or get the strings provided in the download code and insert them respectively like this 
+
+![Fire Detection Demo](src/rbflw.gif)
+ EXAMPLE OUTPUT
+![3.png](src%2F3.png)
+
+
+
+  
 ## [Train](#Train)
-the training method used and how access the training folder
+
+   Run the training script using the following command and insert you Training configuration :
+   ```bash
+   (venv) user@ubuntu:~/AI-Yolo$ python -m App 
+   ```
+
+## Conclusion
+EXAMPLE OUTPUT
+![3.png](src%2Fx.png)
+![3.png](src%2Fxx.png)
+![3.png](src%2Fxxx.png)
+Congratulations! You've successfully trained a YOLOv8 model using the `python -m App` command. Experiment with different configurations, datasets, and hyperparameters to achieve the best results for your specific object detection task. If you encounter any issues or need further assistance, refer to the repository's documentation or seek help from the community.
+<br> For our example we will be using the models yolov8n.pt , yolov8s.pt, yolov8m.pt
+and we ll be tranning each model 3 times (50 epochs, 100 epochs, 300 epochs)
+with other fixed configuration (workers 8, 256 imgsz)
+and dont forget to mention if you re using 'CPU' put ur GPU device id in ddevice value <br>
+<br>Happy training! 🚀
+
 ## [Resume Train](#resume train)
-how to resumed a crashed training
+If your trainning ever crashed you can use this functionality to resume the training  
+![3.png](src%2Fy.png)
+![3.png](src%2Fyy.png)
+
+>Congratulations! You've successfully resumed a crashed trainning 
+the training will contuinue on the same confuration setted first
+<br>Training rescued ! 🚀
+
 ## [Validate](#Validate)
 how to validate a trained model and access the validation folder
+![3.png](src%2Fz.png)
+![3.png](src%2Fzz.png)
 ## [Performance metrix evaluation](#performance metrics evaluation)
 compare some performance metrics of the pretrained model throught the be
+    
+
 ## [Test on local video sample](#Test on local video sample)
-test the trained models on local video samples and access the results 
+![3.png](src%2Fv.png)
+![3.png](src%2Fvv.png)
 ## [Test Real Time](#test real time)
 test the trained models on live stream and access the saved results 
+![3.png](src%2Fb.png)
+![3.png](src%2Fbb.png)
 ## Contributing
+
 >Contributions are welcome! Fork the repository, create a new branch, and submit a pull request.
 
 ## License

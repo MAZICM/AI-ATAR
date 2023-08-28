@@ -2,7 +2,7 @@ task: detect
 mode: train
 model: /home/kenaro/ForestFireDetection/AI-Yolo/src/yolov8DefaultModels/yolov8m.pt
 data: /home/kenaro/ForestFireDetection/AI-Yolo/src/datasets/Fire-Detection-6/data.yaml
-epochs: 100
+epochs: 300
 patience: 50
 batch: 16
 imgsz: 256
@@ -12,7 +12,7 @@ cache: false
 device: 0
 workers: 8
 project: Train
-name: train-e100-i256-w8-v8m
+name: train-e300-i256-w8-v8m
 exist_ok: false
 pretrained: true
 optimizer: auto
@@ -94,4 +94,4 @@ mixup: 0.0
 copy_paste: 0.0
 cfg: null
 tracker: botsort.yaml
-save_dir: Train/train-e100-i256-w8-v8m
+save_dir: Train/train-e300-i256-w8-v8m3
