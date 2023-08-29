@@ -354,8 +354,7 @@ test the trained models on live stream and access the saved results
 This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
-For questions or feedback, feel free to reach out to [MOUHIB Otman](mailto:mouhib.otm@gmail.com) or [BACCARI Rihab](mailto:mouhib.otm@gmail.com).
-
+For questions or feedback, feel free to reach out to [MOUHIB Otman](mailto:mouhib.otm@gmail.com) or [BACCARI Rihab](mailto:)
 ## Acknowledgements
 - Ultralytics for YOLO wrapper
 - Roboflow for dataset
