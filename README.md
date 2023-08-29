@@ -329,8 +329,15 @@ how to validate a trained model and access the validation folder
 ![3.png](src%2Fz.png)
 ![3.png](src%2Fzz.png)
 ## [Performance metrix evaluation](#performance metrics evaluation)
-compare some performance metrics of the pretrained model throught the be
-    
+### Yolov8n
+<br>Train/train-e300-i256-w8-v8n/val_batch1_pred.jpg
+![3.png](Train/train-e300-i256-w8-v8n/val_batch1_pred.jpg)
+### Yolov8s
+<br>Train/train-e300-i256-w8-v8s/val_batch1_pred.jpg
+![3.png](Train/train-e300-i256-w8-v8s/val_batch1_pred.jpg)
+### Yolov8m
+<br>Train/train-e300-i256-w8-v8s/val_batch1_pred.jpg
+![3.png](Train/train-e300-i256-w8-v8m/val_batch1_pred.jpg)
 
 ## [Test on local video sample](#Test on local video sample)
 ![3.png](src%2Fv.png)
@@ -354,7 +361,7 @@ For questions or feedback, feel free to reach out to [MOUHIB Otman](mailto:mouhi
 - Roboflow for dataset
 
 ## User Reviews
-> "I've been using this forest fire detection system for a while now, and it has significantly improved our response time to potential fire outbreaks. The accuracy and real-time detection capabilities are impressive."
-> — John Doe, Forest Ranger
+> "I've been using this forest fire detection system for a while now, and it has significantly improved our response time to potential fire outbreaks. The accuracy and real-time detection capabilities are impressive." (Review Example)
+> — John Doe, Forest Ranger (Reviewer name , username Example)
 
  
