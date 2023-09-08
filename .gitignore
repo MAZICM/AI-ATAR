@@ -6,8 +6,6 @@ Wildfire-2
 *.avi
 t.py
 __pycache__/
-
-
 bus.jpg
 qodana.yaml
 venv/
