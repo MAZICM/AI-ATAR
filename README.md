@@ -6,10 +6,11 @@
 # <h1 style="font-size:40px; text-align:center;"> AI-ATAR
 <h6 style="font-size:40px; text-align:center;"> Real-Time Forest Fire Detection
 
-## <h2 style="font-size:30px; ">Introduction
-<p style="font-size:20px; ">The Real-Time Forest Fire Detection project employs cutting-edge deep learning techniques to detect and respond to forest fires promptly. Leveraging YOLO (You Only Look Once) models and efficient object detection algorithms, this project aims to contribute to early fire detection, reducing the risk of catastrophic damage to our natural landscapes.</p>
+## <h2 style="font-size:30px; ">Introduction</h2>
 
-## <h2 style="font-size:30px; ">Project in Action
+<p style="font-size:20px; ">The Real-Time Forest Fire Detection project employs cutting-edge deep learning techniques to detect and respond to forest fires promptly. Leveraging YOLO (You Only Look Once) models and efficient object detection algorithms, this project aims to contribute to early fire detection, reducing the risk of catastrophic damage to our natural landscapes.<\p>
+
+## <h2 style="font-size:30px; ">Project in Action</h2>
    ![Fire Detection Demo](src/2.mp4_out.gif)
 <br>This GIF demonstrates how the fire detection system detects fire in a real-time video stream.
 
@@ -51,19 +52,19 @@ Before you begin, make sure you have the following prerequisites installed:
 - [Models](#models)
 - [Example](#examples)
   - [Dataset](#Dataset)
-  <br>https://universe.roboflow.com/vishwaketu-malakar-o9d0b/fire-detection-7oyym/dataset/6#
+      - https://universe.roboflow.com/vishwaketu-malakar-o9d0b/fire-detection-7oyym/dataset/6#
   - [Train](#Train)
   - [Resume Train](#resume train)
   - [Validate](#Validate)
   - [Performance metrix evaluation](#performance metrics evaluation)
   - [Test on local video sample](#Test on local video sample)
-    - [Test Real Time](#test real time)
+  - [Test Real Time](#test real time)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
-## <h2 style="font-size:30px; "> Installation
+# <h2 style="font-size:30px; "> Installation
 ## Important Note: GPU Compatibility and TensorFlow-GPU Installation
 
 >If you intend to use this project with GPU acceleration for deep learning tasks, it's crucial to ensure that you have the correct NVIDIA and CUDA drivers installed that are compatible with your GPU. Additionally, make sure you have a compatible version of TensorFlow-GPU.
@@ -76,23 +77,23 @@ Before you begin, make sure you have the following prerequisites installed:
 
 1. Clone this repository:
    ```sh
-   user@ubuntu:~$  git clone https://github.com/AI-ForestFireDetection/AI-Yolo.git
+   user@ubuntu:~$  git clone https://github.com/MAZICM/AI-ATAR.git
    ```
 2. Access the Repo:
    ```sh
-   user@ubuntu:~$ cd AI-Yolo/
+   user@ubuntu:~$ cd AI-ATAR/
    ```
 3. Create your Python env :
    ```sh
-   user@ubuntu:~/AI-Yolo$ python3 -m venv venv
+   user@ubuntu:~/AI-ATAR$ python3 -m venv venv
    ```
 4. Activate your python env:
    ```sh
-   (venv) user@ubuntu:~/AI-Yolo$ source  ./venv/bin/activate
+   (venv) user@ubuntu:~/AI-ATAR$ source  venv/bin/activate
    ```
 5. Install the required dependencies:
    ```sh
-   (venv) user@ubuntu:~/AI-Yolo$ pip install ultralytics opencv-python
+   (venv) user@ubuntu:~/AI-ATAR$ pip install -r requirements.txt
    ```
 ## <h2 style="font-size:30px; ">Configuration
 >Configuring and adapting the fire and smoke detection to your specific requirements is straightforward. Simply follow these steps:
@@ -126,121 +127,138 @@ Before you begin, make sure you have the following prerequisites installed:
    >The entire process is designed to be intuitive and user-friendly. You don't need to edit complex configuration files. Instead, you'll be guided step-by-step through the script's prompts to insert the correct paths, file names, and other values. This flexibility allows you to adapt the detection to various scenarios and achieve accurate results effortlessly.
 
 ## <h2 style="font-size:30px; "> Usage
-1. ### Using App.py file :
-    Run the `App.py` file to access all the utilities .
-    ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -m App
-    ```
-    OUTPUT
-    ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -m App
-    
-    
-    Welcome To ATAR ! :)
-    2023-08-25 23:30:09,558 - INFO
+
+### 1. Using App.py file :
+
+Run the `App.py` file to access all the utilities .
+
+```sh
+(venv) user@ubuntu:~/AI-ATAR$ python -m App
+```
+
+OUTPUT
+
+```sh
+(venv) user@ubuntu:~/AI-ATAR$ python -m App
 
 
-        -----------------------
-        Welcome to My CLI Menu
-        -----------------------
-
-                1. Download RoboFlow straining dataset
-                2. Train
-                3. Resume existing Train
-                4. Valid
-                5. Live Test
-                6. test on an existing file
-                7. Quit
-
-        ----------------------------------------------------------
-        To exit the CLI menu, choose option '7' or press 'Ctrl+C'.
-        ------------------------------------------------------------
-
-    Execution time: 0.00 seconds
-    2023-08-25 23:30:09,559 - INFO
+Welcome To ATAR ! :)
+2023-08-25 23:30:09,558 - INFO
 
 
+    -----------------------
+    Welcome to My CLI Menu
+    -----------------------
+
+            1. Download RoboFlow straining dataset
+            2. Train
+            3. Resume existing Train
+            4. Valid
+            5. Live Test
+            6. test on an existing file
+            7. Quit
+
+    ----------------------------------------------------------
+    To exit the CLI menu, choose option '7' or press 'Ctrl+C'.
+    ------------------------------------------------------------
+
+Execution time: 0.00 seconds
+2023-08-25 23:30:09,559 - INFO
 
 
-          ======> Enter your choice : 
-
-    ```
-2. ### Using Each utility on it s own :
-
-    ### Video Detection 
-    Run the `videoDetect()` function to detect fires in a video file.
-
-    ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from src.Utilities.vDetect import video_detect; video_detect()'
-    ```
-    OUTPUT
-    ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from src.Utilities.vDetect import video_detect; video_detect()'
 
 
-                1. video1.mp4
+      ======> Enter your choice : 
+```
 
-          ======> Enter the number of your choice: 
+### 2. Using Each utility on it s own :
 
-    ```
-    ### Live Stream Detection
-    
-    Run the `Stream()` function to start a live stream for fire detection.
-    
-    ```sh
-    python -c 'from src.Utilities.sDetect import stream; stream()'
-    ```
-    OUTPUT
-    ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from src.Utilities.sDetect import stream; stream()'
+### Video Detection
 
-    STREAM START
-    2023-08-25 23:53:12,919 - INFO
+Run the `videoDetect()` function to detect fires in a video file.
 
-          ======> source :
-    ```
-    ### Model Training
-    
-    Run the `train()` function to train your own YOLO model.
-    
-    ```sh
-    python -c 'from src.Utilities.modelTrain import m_train; m_train()'
-    ```
-    OUTPUT
-    ```sh
+```sh
+(venv) user@ubuntu:~/AI-ATAR$ python -c 'from src.Utilities.vDetect import video_detect; video_detect()'
+```
 
-    (venv) user@ubuntu:~/AI-Yolo$  python -c 'from src.Utilities.modelTrain import m_train; m_train()'
+OUTPUT
+
+```sh
+(venv) user@ubuntu:~/AI-ATAR$ python -c 'from src.Utilities.vDetect import video_detect; video_detect()'
 
 
-                1. yolov8n.pt
-                2. yolov8s.pt
-                3. yolov8m.pt
-                4. yolov8l.pt
-                5. yolov8x.pt
+            1. video1.mp4
 
-          ======> Enter the number of your choice: 
-    ```
+      ======> Enter the number of your choice: 
 
-    ### Validation
-    Run the `valid()` function to validate your YOLO model.
+```
 
-    ```sh
-    python -c 'from src.Utilities.modelValid import m_valid; m_valid()'
-    ```
-    OUTPUT
-    ```sh
-    (venv) user@ubuntu:~/AI-Yolo$ python -c 'from src.Utilities.modelValid import m_valid; m_valid()'
+### Live Stream Detection
+
+Run the `Stream()` function to start a live stream for fire detection.
+
+```sh
+python -c 'from src.Utilities.sDetect import stream; stream()'
+```
+
+OUTPUT
+
+```sh
+(venv) user@ubuntu:~/AI-ATAR$ python -c 'from src.Utilities.sDetect import stream; stream()'
+
+STREAM START
+2023-08-25 23:53:12,919 - INFO
+
+      ======> source :
+```
+
+### Model Training
+
+Run the `train()` function to train your own YOLO model.
+
+```sh
+python -c 'from src.Utilities.modelTrain import m_train; m_train()'
+```
+
+OUTPUT
+
+```sh
+
+(venv) user@ubuntu:~/AI-ATAR$  python -c 'from src.Utilities.modelTrain import m_train; m_train()'
 
 
-                1. train-e100-i256-w8-v8s
-                2. train-e300-i240-w8-v8s
-                3. train-e100-i256-w8-v8n
-                4. train-e300-i256-w8-v8n
-                5. train-e50-i256-w8-v8n
-                6. train-e50-i256-w8-v8s
+            1. yolov8n.pt
+            2. yolov8s.pt
+            3. yolov8m.pt
+            4. yolov8l.pt
+            5. yolov8x.pt
 
-          ======> Enter the number of your choice: 
-    ```
+      ======> Enter the number of your choice: 
+```
+
+### Validation
+
+Run the `valid()` function to validate your YOLO model.
+
+```sh
+python -c 'from src.Utilities.modelValid import m_valid; m_valid()'
+```
+
+OUTPUT
+
+```sh
+(venv) user@ubuntu:~/AI-ATAR$ python -c 'from src.Utilities.modelValid import m_valid; m_valid()'
+
+
+            1. train-e100-i256-w8-v8s
+            2. train-e300-i240-w8-v8s
+            3. train-e100-i256-w8-v8n
+            4. train-e300-i256-w8-v8n
+            5. train-e50-i256-w8-v8n
+            6. train-e50-i256-w8-v8s
+
+      ======> Enter the number of your choice: 
+```
 ## <h2 style="font-size:30px; ">Example
 ## [Dataset](#Dataset)
 Roboflow, your premier data annotation and dataset resource, 
@@ -274,13 +292,56 @@ Check out the curated "Fire Detection" dataset by vishwaketu-malakar-o9d0b:
 >- or get the strings provided in the download code and insert them respectively like this 
 
 ![Fire Detection Demo](src/rbflw.gif)
- EXAMPLE OUTPUT
-![3.png](src%2F3.png)
+EXAMPLE RUN
 
+```sh
+    (venv) user@ubuntu:~/MAZICM/AI-ATAR$ python -m App
+    
+    
+    Welcome To ATAR ! :)
+    2023-09-08 02:40:10,571 - INFO
+    
+    
+            -----------------------
+            Welcome to My CLI Menu
+            -----------------------
+    
+                    1. Download RoboFlow straining dataset
+                    2. Train
+                    3. Resume existing Train
+                    4. Valid
+                    5. Live Test
+                    6. test on an existing file
+                    7. Quit
+    
+            ----------------------------------------------------------
+            To exit the CLI menu, choose option '7' or press 'Ctrl+C'.
+            ------------------------------------------------------------
+    
+    Execution time: 0.00 seconds
+    2023-09-08 02:40:10,573 - INFO
+    
+    
+    
+    
+              ======> Enter your choice : 1
+    Downloading DataSet ...............................
+    Enter your API_key : xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    Enter your workspace : xxxxxxxxxxxxxxx                 
+    Enter your project : xxxxxxxxxxxx
+    Enter your Download :yolov8x
+    
+    DOWNLOAD START
+    2023-09-08 02:40:38,012 - INFO
+    
+    
+    loading Roboflow workspace...
+    loading Roboflow project...
 
+     
+```
 
-  
-## [Train](#Train)
+## [Train](#Train) !!!!
 
    Run the training script using the following command and insert you Training configuration :
    ```bash
@@ -304,8 +365,8 @@ If your trainning ever crashed you can use this functionality to resume the trai
 ![3.png](src%2Fy.png)
 ![3.png](src%2Fyy.png)
 
->Congratulations! You've successfully resumed a crashed trainning 
-the training will contuinue on the same confuration setted first
+> Congratulations! You've successfully resumed a crashed trainning
+> the training will contuinue on the same confuration setted first
 <br>Training rescued ! 🚀
 
 ## [Validate](#Validate)
