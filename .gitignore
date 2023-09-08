@@ -6,9 +6,12 @@ Wildfire-2
 *.avi
 t.py
 __pycache__/
+
+
 bus.jpg
 qodana.yaml
-Pvenv/
+venv/
+*.pt
 yolov8n.pt
 yolov8s.pt
 yolov8m.pt
