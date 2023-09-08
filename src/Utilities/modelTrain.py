@@ -1,13 +1,17 @@
-from ultralytics import YOLO
-import time
-from src.Utilities import log
 import os
+import time
+
+from ultralytics import YOLO
+
 from src.Utilities import flexMenu
+from src.Utilities import log
+
+
 def m_train():
     start_time = time.time()
     try:
         # Code that might raise an exception
-        f = ['yolov8n.pt','yolov8s.pt','yolov8m.pt','yolov8l.pt','yolov8x.pt']
+        f = ['yolov8n.pt', 'yolov8s.pt', 'yolov8m.pt', 'yolov8l.pt', 'yolov8x.pt']
         model_path = os.getcwd() + "/src/yolov8DefaultModels/"
         model_name = flexMenu.display_options(f)
         model_path = model_path + model_name
@@ -16,11 +20,11 @@ def m_train():
         y = os.getcwd()
         print("\n\t DATASETS :")
         x = flexMenu.display_options(f)
-        data_path = y+"/"+data_path + "/" + x + "/data.yaml"
+        data_path = y + "/" + data_path + "/" + x + "/data.yaml"
         print("\n\tConfigure Training Parameters : ")
-        epochs =  int(input("\n\t  ======> Insert Epochs Value   : "))
-        imgsz =   int(input("\n\t  ======> Insert imgsz Value    : "))
-        device =  int(input("\n\t  ======> Insert device Value   : "))
+        epochs = int(input("\n\t  ======> Insert Epochs Value   : "))
+        imgsz = int(input("\n\t  ======> Insert imgsz Value    : "))
+        device = int(input("\n\t  ======> Insert device Value   : "))
         workers = int(input("\n\t  ======> Insert workers Value  : "))
         project = "Train"
         if model_name == "yolov8n.pt":
@@ -34,7 +38,7 @@ def m_train():
         elif model_name == "yolov8x.pt":
             m = "x"
 
-        name = "train-e"+str(epochs)+"-i"+str(imgsz)+"-w"+str(workers)+"-"+"v8" + m
+        name = "train-e" + str(epochs) + "-i" + str(imgsz) + "-w" + str(workers) + "-" + "v8" + m
         start_time = time.time()
         model = YOLO(model_path)
         log.logger.info("\nTraining START")
@@ -56,4 +60,3 @@ def m_train():
         # Code that will run regardless of whether an exception occurred
         log.logger.critical("\nTrainning EXIT")
         print("\n")
-
