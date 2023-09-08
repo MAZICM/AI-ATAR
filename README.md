@@ -556,10 +556,86 @@ Starting training for 6 epochs...
 > <br><br>Training rescued ! 🚀
 
 ## [Validate](#Validate)
-how to validate a trained model and access the validation folder
 
-![3.png](src%2Fz.png)
-![3.png](src%2Fzz.png)
+````shell
+Welcome To ATAR ! :)
+2023-09-08 05:29:44,752 - INFO
+
+
+        -----------------------
+        Welcome to My CLI Menu
+        -----------------------
+
+                1. Download RoboFlow straining dataset
+                2. Train
+                3. Resume existing Train
+                4. Valid
+                5. Live Test
+                6. test on an existing file
+                7. Quit
+
+        ----------------------------------------------------------
+        To exit the CLI menu, choose option '7' or press 'Ctrl+C'.
+        ------------------------------------------------------------
+
+Execution time: 0.00 seconds
+2023-09-08 05:29:44,753 - INFO
+
+
+
+
+          ======> Enter your choice : 4
+
+         Trained Model to Validate : 
+
+
+                1. train-e50-i256-w8-v8m
+                2. train-e300-i256-w8-v8m
+                3. train-e100-i256-w8-v8m
+                4. train-e100-i256-w8-v8s
+                5. train-e300-i240-w8-v8s
+                6. train-e300-i256-w8-v8s
+                7. train-e100-i256-w8-v8n
+                8. train-e300-i256-w8-v8n
+                9. train-e50-i256-w8-v8n
+                10. train-e50-i256-w8-v8s
+                11. train-e6-i156-w4-v8l
+
+          ======> Enter the number of your choice: 11
+
+         Validate Best or Last Weights : 
+
+
+                1. last.pt
+                2. best.pt
+
+          ======> Enter the number of your choice: 2
+
+Validation START
+2023-09-08 05:29:57,071 - INFO
+
+Ultralytics YOLOv8.0.173 🚀 Python-3.11.4 torch-2.0.1+cu117 CUDA:0 (NVIDIA GeForce 930MX, 2003MiB)
+Model summary (fused): 268 layers, 43608150 parameters, 0 gradients
+val: Scanning /home/kenaro/MAZICM/AI-ATAR/src/datasets/Fire-Detection-6/valid/labels.cache... 203 images, 0 backgrounds, 0 corrupt: 100%|██████████| 203/203 [00:00<?, ?i
+WARNING ⚠️ Box and segment counts should be equal, but got len(segments) = 12, len(boxes) = 909. To resolve this only boxes will be used and all segments will be removed. To avoid this please supply either a detect or segment dataset, not a detect-segment mixed dataset.
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 13/13 [00:20<00:00,  1.61s/it]
+                   all        203        909      0.355      0.343      0.268        0.1
+                  fire        203        571      0.417      0.399      0.332      0.124
+                 smoke        203        338      0.294      0.287      0.204     0.0766
+Speed: 0.5ms preprocess, 70.3ms inference, 0.0ms loss, 3.8ms postprocess per image
+Results saved to Vaild/train-e6-i156-w4-v8l_eval_best
+
+No errors occurred DONE SUCCESS
+Execution time: 42.69 seconds
+2023-09-08 05:30:39,764 - INFO
+
+Validation EXIT
+
+2023-09-08 05:30:39,765 - WARNING
+
+          ======> Do you want to proceed? (Y/N): 
+````
+
 ## [Performance metrix evaluation](#performance metrics evaluation)
 ### Yolov8n
 <br>Train/train-e300-i256-w8-v8n/val_batch1_pred.jpg
@@ -572,12 +648,185 @@ how to validate a trained model and access the validation folder
 ![3.png](Train/train-e300-i256-w8-v8m/val_batch1_pred.jpg)
 
 ## [Test on local video sample](#Test on local video sample)
-![3.png](src%2Fv.png)
-![3.png](src%2Fvv.png)
-## [Test Real Time](#test real time)
+
+````shell
+Welcome To ATAR ! :)
+2023-09-08 05:29:44,752 - INFO
+
+
+        -----------------------
+        Welcome to My CLI Menu
+        -----------------------
+
+                1. Download RoboFlow straining dataset
+                2. Train
+                3. Resume existing Train
+                4. Valid
+                5. Live Test
+                6. test on an existing file
+                7. Quit
+
+        ----------------------------------------------------------
+        To exit the CLI menu, choose option '7' or press 'Ctrl+C'.
+        ------------------------------------------------------------
+
+Execution time: 0.00 seconds
+2023-09-08 05:29:44,753 - INFO
+
+
+
+
+          ======> Enter your choice : 4
+
+         Trained Model to Validate : 
+
+
+                1. train-e50-i256-w8-v8m
+                2. train-e300-i256-w8-v8m
+                3. train-e100-i256-w8-v8m
+                4. train-e100-i256-w8-v8s
+                5. train-e300-i240-w8-v8s
+                6. train-e300-i256-w8-v8s
+                7. train-e100-i256-w8-v8n
+                8. train-e300-i256-w8-v8n
+                9. train-e50-i256-w8-v8n
+                10. train-e50-i256-w8-v8s
+                11. train-e6-i156-w4-v8l
+
+          ======> Enter the number of your choice: 11
+
+         Validate Best or Last Weights : 
+
+
+                1. last.pt
+                2. best.pt
+
+          ======> Enter the number of your choice: 2
+
+Validation START
+2023-09-08 05:29:57,071 - INFO
+
+Ultralytics YOLOv8.0.173 🚀 Python-3.11.4 torch-2.0.1+cu117 CUDA:0 (NVIDIA GeForce 930MX, 2003MiB)
+Model summary (fused): 268 layers, 43608150 parameters, 0 gradients
+val: Scanning /home/kenaro/MAZICM/AI-ATAR/src/datasets/Fire-Detection-6/valid/labels.cache... 203 images, 0 backgrounds, 0 corrupt: 100%|██████████| 203/203 [00:00<?, ?i
+WARNING ⚠️ Box and segment counts should be equal, but got len(segments) = 12, len(boxes) = 909. To resolve this only boxes will be used and all segments will be removed. To avoid this please supply either a detect or segment dataset, not a detect-segment mixed dataset.
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 13/13 [00:20<00:00,  1.61s/it]
+                   all        203        909      0.355      0.343      0.268        0.1
+                  fire        203        571      0.417      0.399      0.332      0.124
+                 smoke        203        338      0.294      0.287      0.204     0.0766
+Speed: 0.5ms preprocess, 70.3ms inference, 0.0ms loss, 3.8ms postprocess per image
+Results saved to Vaild/train-e6-i156-w4-v8l_eval_best
+
+No errors occurred DONE SUCCESS
+Execution time: 42.69 seconds
+2023-09-08 05:30:39,764 - INFO
+
+Validation EXIT
+
+2023-09-08 05:30:39,765 - WARNING
+
+          ======> Do you want to proceed? (Y/N): n
+
+User chose not to proceed.
+2023-09-08 05:35:24,321 - CRITICAL
+(venv) (base) kenaro@rasmus:~/MAZICM/AI-ATAR$ clear
+(venv) (base) kenaro@rasmus:~/MAZICM/AI-ATAR$ python -m App
+
+
+Welcome To ATAR ! :)
+2023-09-08 05:36:57,482 - INFO
+
+
+        -----------------------
+        Welcome to My CLI Menu
+        -----------------------
+
+                1. Download RoboFlow straining dataset
+                2. Train
+                3. Resume existing Train
+                4. Valid
+                5. Live Test
+                6. test on an existing file
+                7. Quit
+
+        ----------------------------------------------------------
+        To exit the CLI menu, choose option '7' or press 'Ctrl+C'.
+        ------------------------------------------------------------
+
+Execution time: 0.00 seconds
+2023-09-08 05:36:57,482 - INFO
+
+
+
+
+          ======> Enter your choice : 6
+V..............
+
+
+                1. video1.mp4
+
+          ======> Enter the number of your choice: 1
+
+
+                1. train-e50-i256-w8-v8m
+                2. train-e300-i256-w8-v8m
+                3. train-e100-i256-w8-v8m
+                4. train-e100-i256-w8-v8s
+                5. train-e300-i240-w8-v8s
+                6. train-e300-i256-w8-v8s
+                7. train-e100-i256-w8-v8n
+                8. train-e300-i256-w8-v8n
+                9. train-e50-i256-w8-v8n
+                10. train-e50-i256-w8-v8s
+                11. train-e6-i156-w4-v8l
+
+          ======> Enter the number of your choice: 11
+
+
+                1. last.pt
+                2. best.pt
+
+          ======> Enter the number of your choice: 2
+enter threshold :0.5
+
+Detection START
+2023-09-08 05:38:08,200 - INFO
+OpenCV: FFMPEG: tag 0x5634504d/'MP4V' is not supported with codec id 12 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+OpenCV: FFMPEG: fallback to use tag 0x7634706d/'mp4v'
+
+0: 96x160 2 fires, 88.6ms
+Speed: 7.6ms preprocess, 88.6ms inference, 8.4ms postprocess per image at shape (1, 3, 96, 160)
+
+0: 96x160 2 fires, 60.3ms
+Speed: 1.4ms preprocess, 60.3ms inference, 5.9ms postprocess per image at shape (1, 3, 96, 160)
+````
+
+````shell
+0: 96x160 1 fire, 67.4ms
+Speed: 2.0ms preprocess, 67.4ms inference, 7.4ms postprocess per image at shape (1, 3, 96, 160)
+
+0: 96x160 1 fire, 70.2ms
+Speed: 1.8ms preprocess, 70.2ms inference, 5.7ms postprocess per image at shape (1, 3, 96, 160)
+
+0: 96x160 1 fire, 70.1ms
+Speed: 2.5ms preprocess, 70.1ms inference, 7.8ms postprocess per image at shape (1, 3, 96, 160)
+
+
+No errors occurred DONE SUCESS
+Execution time: 72.33 seconds
+2023-09-08 05:39:20,528 - INFO
+
+Detection EXIT
+
+2023-09-08 05:39:20,529 - WARNING
+
+          ======> Do you want to proceed? (Y/N): 
+
+````
+
+## [Test Real Time](#test real time) !!
 test the trained models on live stream and access the saved results 
-![3.png](src%2Fb.png)
-![3.png](src%2Fbb.png)
+
 ## Contributing
 
 >Contributions are welcome! Fork the repository, create a new branch, and submit a pull request.
