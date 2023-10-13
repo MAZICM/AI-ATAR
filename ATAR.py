@@ -18,7 +18,7 @@ def display_menu():
     # log.logger.error("This is an error message.")
     # log.logger.critical("This is a critical message.")
     log.logger.info("Welcome To ATAR ! :)")
-    print("hello world")
+
     print("\n\n\t-----------------------")
     print("\tWelcome to My CLI Menu")
     print("\t-----------------------\n")
