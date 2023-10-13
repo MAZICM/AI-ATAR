@@ -7,7 +7,7 @@ import time
 def display_menu():
     # Create a custom logger
     # logger.error("An error occurred: %s", e, exc_info=True)
-    #logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+    # logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
     logger = logging.getLogger(__name__)
     start_time = time.time()
     # Code to measure performance

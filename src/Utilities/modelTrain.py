@@ -9,6 +9,7 @@ from src.Utilities import log
 
 def m_train():
     start_time = time.time()
+    m=""
     try:
         # Code that might raise an exception
         f = ['yolov8n.pt', 'yolov8s.pt', 'yolov8m.pt', 'yolov8l.pt', 'yolov8x.pt']
