@@ -42,7 +42,7 @@ def stream():
     try:
         # source = int(input("\n\t  ======> source :"))
         # source = "rtsp://www.hessdalen.org:1935/rtplive/_definst_/hessdalen03.stream"
-        model_path = "/home/kenaro/ForestFireDetection/AI-Yolo/Train/"
+        model_path = "./Train/"
         x = os.listdir(model_path)
         train = flexMenu.display_options(x)
         model_path = model_path + train + "/weights/"

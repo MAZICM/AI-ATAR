@@ -1,7 +1,7 @@
 task: detect
 mode: train
-model: /home/kenaro/ForestFireDetection/AI-Yolo/src/yolov8DefaultModels/yolov8n.pt
-data: /home/kenaro/ForestFireDetection/AI-Yolo/src/datasets/Fire-Detection-6/data.yaml
+model: /home/maro/AI-ATAR/src/yolov8DefaultModels/yolov8n.pt
+data: /home/maro/AI-ATAR/src/datasets/Fire-Detection-6/data.yaml
 epochs: 100
 patience: 50
 batch: 16
@@ -49,6 +49,7 @@ save_crop: false
 show_labels: true
 show_conf: true
 vid_stride: 1
+stream_buffer: false
 line_width: null
 visualize: false
 augment: false
