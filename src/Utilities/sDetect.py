@@ -35,7 +35,7 @@ def stream():
 
     def parse_arguments() -> argparse.Namespace:
         parser = argparse.ArgumentParser(description="YOLOv8 live")
-        parser.add_argument("--webcam-resolution", default=[1280, 720], nargs=2, type=int)  # 480, 640, 3
+        parser.add_argument("--webcam-resolution", default=[1920, 1080], nargs=2, type=int)  # 480, 640, 3
         args = parser.parse_args()
         return args
 
@@ -53,7 +53,6 @@ def stream():
         model = YOLO(model_path)
         args = parse_arguments()
         frame_width, frame_height = args.webcam_resolution
-
         cap = cv2.VideoCapture(0)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_width)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_height)

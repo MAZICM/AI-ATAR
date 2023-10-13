@@ -15,7 +15,9 @@ def roboflow_dataset():
     rbflw_api_key = input("Enter your API_key : ")
     rbflw_workspace = input("Enter your workspace : ")
     rbflw_project = input("Enter your project : ")
+    rbflw_version = input("Enter your version :")
     rbflw_download = input("Enter your Download :")
+
 
     #!pip install roboflow
     #
@@ -32,9 +34,9 @@ def roboflow_dataset():
         os.chdir("src/datasets/")
         start_time = time.time()
 
-        rf = Roboflow(api_key="1F10ZNdjV7NFepJ29yoE")
-        project = rf.workspace("vishwaketu-malakar-o9d0b").project("fire-detection-7oyym")
-        dataset = project.version(6).download("yolov8")
+        rf = Roboflow(api_key=rbflw_api_key)
+        project = rf.workspace(rbflw_workspace).project(rbflw_project)
+        dataset = project.version(rbflw_version).download(rbflw_download)
 
     except Exception as e:
         # Code to handle other exceptions
