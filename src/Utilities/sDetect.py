@@ -58,13 +58,13 @@ def stream():
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, frame_height)
         writer = create_video_writer(cap, "runs/Streams/" + formatted_time + train + m + ".mp4")
 
-        box_annotator = sv.BoxAnnotator(thickness=2, text_thickness=2, text_scale=1)
+        box_annotator = sv.BoxAnnotator(thickness=2)
         os.chdir("./runs/Streams")
 
         while True:
             ret, frame = cap.read()
             results = model(frame)
-            detections = sv.Detections.from_yolov8(results[0])
+            detections = sv.Detections.from_ultralytics(results[0])
             frame = box_annotator.annotate(scene=frame, detections=detections)
             if not detections.class_id.any() == 0:
                 print('ALAAAAAAARRM RINGING FIRE !!!!!')

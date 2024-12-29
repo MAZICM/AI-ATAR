@@ -3,7 +3,7 @@
 *.avi
 __pycache__/
 qodana.yaml
-venv/
+venv*/
 *.pt
 yolov8n.pt
 yolov8s.pt
@@ -13,3 +13,6 @@ yolov8x.pt
 best.pt
 last.pt
 Fire-Detection-6
+src/datasets/*
+runs/*
+Train/*
